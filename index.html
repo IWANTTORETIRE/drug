@@ -1,517 +1,481 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #c27e65; -webkit-text-stroke: #c27e65}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #8cd3fe; -webkit-text-stroke: #8cd3fe}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d7378; -webkit-text-stroke: #6d7378}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca; min-height: 16.0px}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #71c083; -webkit-text-stroke: #71c083}
-    span.s1 {font-kerning: none; background-color: #171818}
-    span.s2 {font-kerning: none; color: #8cd3fe; background-color: #171818; -webkit-text-stroke: 0px #8cd3fe}
-    span.s3 {font-kerning: none; color: #6d6d6d; background-color: #171818; -webkit-text-stroke: 0px #6d6d6d}
-    span.s4 {font-kerning: none; color: #4689cc; background-color: #171818; -webkit-text-stroke: 0px #4689cc}
-    span.s5 {font-kerning: none; color: #cacaca; background-color: #171818; -webkit-text-stroke: 0px #cacaca}
-    span.s6 {font-kerning: none; color: #c27e65; background-color: #171818; -webkit-text-stroke: 0px #c27e65}
-    span.s7 {font-kerning: none; color: #d4d4d4; background-color: #171818; -webkit-text-stroke: 0px #d4d4d4}
-    span.s8 {font-kerning: none; color: #a7c598; background-color: #171818; -webkit-text-stroke: 0px #a7c598}
-    span.s9 {font-kerning: none}
-    span.s10 {font-kerning: none; color: #6d7378; background-color: #171818; -webkit-text-stroke: 0px #6d7378}
-    span.s11 {font-kerning: none; color: #b76ff7; background-color: #171818; -webkit-text-stroke: 0px #b76ff7}
-    span.s12 {font-kerning: none; color: #36c0a0; background-color: #171818; -webkit-text-stroke: 0px #36c0a0}
-    span.s13 {font-kerning: none; color: #71c083; background-color: #171818; -webkit-text-stroke: 0px #71c083}
-    span.s14 {font-kerning: none; color: #f67c30; background-color: #171818; -webkit-text-stroke: 0px #f67c30}
-    span.s15 {font-kerning: none; color: #ee2e38; background-color: #171818; -webkit-text-stroke: 0px #ee2e38}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中醫智慧開藥系統</title>
+    <!-- 引入 Tailwind CSS 與 必要函式庫 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        @media print { .no-print { display: none; } }
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 10px; }
+        
+        /* 修復 PDF 渲染問題：確保模板在背景中以正確尺寸渲染 */
+        #pdf-render-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 210mm;
+            z-index: -100;
+            overflow: hidden;
+            background: white;
+            visibility: hidden;
+        }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">html</span><span class="s5"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s1">"zh-TW"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">中醫智慧開藥系統</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 引入 Tailwind CSS 與 必要函式庫 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">.tab-content</span><span class="s1"> </span><span class="s7">{</span><span class="s1"> </span><span class="s2">display:</span><span class="s1"> </span><span class="s6">none</span><span class="s7">;</span><span class="s1"> </span><span class="s7">}</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">.tab-content.active</span><span class="s5"> </span><span class="s7">{</span><span class="s5"> </span><span class="s2">display:</span><span class="s5"> </span><span class="s6">block</span><span class="s7">;</span><span class="s5"> </span><span class="s7">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>@</span><span class="s4">media</span><span class="s1"> </span><span class="s4">print</span><span class="s1"> </span><span class="s7">{</span><span class="s1"> .no-print { </span><span class="s2">display:</span><span class="s1"> </span><span class="s6">none</span><span class="s7">;</span><span class="s1"> </span><span class="s7">}</span><span class="s1"> }</span></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">/* 自定義捲軸 */</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar</span><span class="s5"> </span><span class="s7">{</span><span class="s5"> </span><span class="s2">width:</span><span class="s5"> </span><span class="s8">6px</span><span class="s7">;</span><span class="s5"> </span><span class="s7">}</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar-track</span><span class="s5"> </span><span class="s7">{</span><span class="s5"> </span><span class="s2">background:</span><span class="s5"> #f1f1f1</span><span class="s7">;</span><span class="s5"> </span><span class="s7">}</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar-thumb</span><span class="s5"> </span><span class="s7">{</span><span class="s5"> </span><span class="s2">background:</span><span class="s5"> #10b981</span><span class="s7">;</span><span class="s5"> </span><span class="s2">border-radius:</span><span class="s5"> </span><span class="s8">10px</span><span class="s7">;</span><span class="s5"> </span><span class="s7">}</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">/* 修復 PDF 渲染問題：確保模板在背景中以正確尺寸渲染 */</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">#pdf-render-container</span><span class="s5"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s6">fixed</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s8">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s8">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s8">210mm</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s8">-100</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow:</span><span class="s1"> </span><span class="s6">hidden</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s6">white</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">visibility:</span><span class="s1"> </span><span class="s6">hidden</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s4">body</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-emerald-50 text-slate-800 font-sans min-h-screen"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 頂部導航 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">header</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white shadow-sm no-print sticky top-0 z-50"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center space-x-2 text-emerald-700"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">svg</span><span class="s5"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"h-8 w-8"</span><span class="s5"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s5"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s5"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s3">&gt;&lt;</span><span class="s4">path</span><span class="s5"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s5"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"</span><span class="s5"> </span><span class="s3">/&gt;&lt;/</span><span class="s4">svg</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">h1</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold tracking-tight"</span><span class="s3">&gt;</span><span class="s5">中醫智慧開藥系統</span><span class="s3">&lt;/</span><span class="s4">h1</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">nav</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex space-x-2"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s5"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"switchTab('prescription')"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"tab-btn-prescription"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"px-4 py-2 rounded-md font-medium transition bg-emerald-100 text-emerald-800"</span><span class="s3">&gt;</span><span class="s5">處方開立</span><span class="s3">&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s5"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"switchTab('inventory')"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"tab-btn-inventory"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"px-4 py-2 rounded-md font-medium transition text-slate-600 hover:bg-slate-100"</span><span class="s3">&gt;</span><span class="s5">藥品庫存管理</span><span class="s3">&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">nav</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">header</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 提示訊息 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"notification"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed top-4 right-4 p-4 rounded-md shadow-lg z-[100] flex items-center space-x-2 text-white transform translate-x-full transition-transform duration-300 hidden"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">main</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-4 py-8 no-print"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 處方開立分頁 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"tab-prescription"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"tab-content active"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 lg:grid-cols-3 gap-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">&lt;!-- 左側：輸入區域 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"space-y-6"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white p-6 rounded-xl shadow-sm border border-emerald-100"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">h3</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"font-bold text-emerald-800 mb-4 border-b pb-2"</span><span class="s3">&gt;</span><span class="s5">病患資訊</span><span class="s3">&lt;/</span><span class="s4">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"space-y-3"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"p-name"</span><span class="s5"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"病患姓名"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded focus:ring-2 focus:ring-emerald-500 outline-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"flex gap-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">select</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s6">"p-gender"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"w-1/2 p-2 border rounded"</span><span class="s3">&gt;&lt;</span><span class="s4">option</span><span class="s3">&gt;</span><span class="s1">男</span><span class="s3">&lt;/</span><span class="s4">option</span><span class="s3">&gt;&lt;</span><span class="s4">option</span><span class="s3">&gt;</span><span class="s1">女</span><span class="s3">&lt;/</span><span class="s4">option</span><span class="s3">&gt;&lt;/</span><span class="s4">select</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"number"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"p-age"</span><span class="s5"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"年齡"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1/2 p-2 border rounded"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"date"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"p-date"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">textarea</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"p-diag"</span><span class="s5"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"診斷 / 症狀"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded"</span><span class="s5"> </span><span class="s2">rows</span><span class="s3">=</span><span class="s1">"2"</span><span class="s3">&gt;&lt;/</span><span class="s4">textarea</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white p-6 rounded-xl shadow-sm border border-emerald-100"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">h3</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"font-bold text-emerald-800 mb-4 border-b pb-2"</span><span class="s3">&gt;</span><span class="s5">處方設定與加藥</span><span class="s3">&lt;/</span><span class="s4">h3</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 gap-3 mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">label</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-slate-500"</span><span class="s3">&gt;</span><span class="s5">服用天數</span><span class="s3">&lt;/</span><span class="s4">label</span><span class="s3">&gt;&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"number"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"s-days"</span><span class="s5"> </span><span class="s2">value</span><span class="s3">=</span><span class="s1">"7"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded text-center font-bold"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">label</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-slate-500"</span><span class="s3">&gt;</span><span class="s5">每日次數</span><span class="s3">&lt;/</span><span class="s4">label</span><span class="s3">&gt;&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"number"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"s-packets"</span><span class="s5"> </span><span class="s2">value</span><span class="s3">=</span><span class="s1">"2"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded text-center font-bold"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"col-span-2 mt-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">label</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"text-xs text-slate-500"</span><span class="s3">&gt;</span><span class="s1">醫師姓名 (列印用)</span><span class="s3">&lt;/</span><span class="s4">label</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"s-doctor"</span><span class="s5"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"醫師簽章姓名"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"col-span-2"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">label</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"text-xs text-slate-500"</span><span class="s3">&gt;</span><span class="s1">註冊編號 (列印用)</span><span class="s3">&lt;/</span><span class="s4">label</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"s-regno"</span><span class="s5"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"例如: 00XXXX"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-2 border rounded"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"relative mt-4"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text"</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"med-search"</span><span class="s5"> </span><span class="s2">oninput</span><span class="s3">=</span><span class="s1">"handleSearch(this.value)"</span><span class="s5"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"搜尋藥品名稱或編號..."</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full p-3 pl-10 border-2 border-emerald-200 rounded-lg outline-none focus:border-emerald-500"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute left-3 top-3.5 text-slate-400"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">svg</span><span class="s5"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"h-5 w-5"</span><span class="s5"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s5"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s5"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s3">&gt;&lt;</span><span class="s4">path</span><span class="s5"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s5"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"</span><span class="s5"> </span><span class="s3">/&gt;&lt;/</span><span class="s4">svg</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s10">&lt;!-- 搜尋結果 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"search-results"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute z-50 w-full bg-white mt-1 border rounded-lg shadow-xl max-h-60 overflow-y-auto hidden"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">&lt;!-- 右側：處方明細 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"lg:col-span-2 space-y-6"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white p-6 rounded-xl shadow-sm border border-emerald-100 min-h-[400px] flex flex-col"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">h3</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"font-bold text-emerald-800 mb-4 border-b pb-2 flex justify-between"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s3">&gt;</span><span class="s1">處方清單</span><span class="s3">&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">span</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"summary-header"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-sm font-normal text-slate-500"</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"flex-1 overflow-x-auto"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">table</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"w-full"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">thead</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-slate-50 text-xs text-slate-500 uppercase"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span></span><span class="s3">&lt;</span><span class="s4">tr</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span></span><span class="s3">&lt;</span><span class="s4">th</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"p-3 text-left"</span><span class="s3">&gt;</span><span class="s1">藥品名稱</span><span class="s3">&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span></span><span class="s3">&lt;</span><span class="s4">th</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"p-3 text-center"</span><span class="s3">&gt;</span><span class="s1">每日 (g)</span><span class="s3">&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span></span><span class="s3">&lt;</span><span class="s4">th</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"p-3 text-right"</span><span class="s3">&gt;</span><span class="s1">總量 (g)</span><span class="s3">&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span></span><span class="s3">&lt;</span><span class="s4">th</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"p-3 text-right"</span><span class="s3">&gt;</span><span class="s1">小計</span><span class="s3">&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span></span><span class="s3">&lt;</span><span class="s4">th</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"p-3 text-center w-10"</span><span class="s3">&gt;&lt;/</span><span class="s4">th</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span></span><span class="s3">&lt;/</span><span class="s4">tr</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;/</span><span class="s4">thead</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">tbody</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s6">"selected-meds-list"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"divide-y"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span></span><span class="s10">&lt;!-- 動態生成 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;/</span><span class="s4">tbody</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">table</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-6 bg-slate-800 text-white p-6 rounded-xl"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 md:grid-cols-4 gap-4 mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-slate-400"</span><span class="s3">&gt;</span><span class="s5">總天數</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"calc-days"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold"</span><span class="s3">&gt;</span><span class="s5">0</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-slate-400"</span><span class="s3">&gt;</span><span class="s5">每日總量</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"calc-daily-g"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold"</span><span class="s3">&gt;</span><span class="s5">0 g</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-slate-400"</span><span class="s3">&gt;</span><span class="s5">估算成本</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"calc-cost"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold text-slate-300"</span><span class="s3">&gt;</span><span class="s5">$ 0</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xs text-emerald-400 font-bold"</span><span class="s3">&gt;</span><span class="s5">總售價</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"calc-total"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold text-emerald-400"</span><span class="s3">&gt;</span><span class="s5">$ 0</span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"flex gap-3"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s5"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"clearPrescription()"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex-1 py-2 border border-slate-600 rounded hover:bg-slate-700 transition"</span><span class="s3">&gt;</span><span class="s5">清空</span><span class="s3">&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s4">button</span><span class="s5"> </span><span class="s2">onclick</span><span class="s3">=</span><span class="s1">"generatePDF()"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex-[2] py-2 bg-emerald-500 rounded font-bold hover:bg-emerald-400 transition flex items-center justify-center gap-2"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                                    </span></span><span class="s3">&lt;</span><span class="s4">svg</span><span class="s5"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"h-5 w-5"</span><span class="s5"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s5"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s5"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s3">&gt;&lt;</span><span class="s4">path</span><span class="s5"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s5"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"</span><span class="s5"> </span><span class="s3">/&gt;&lt;/</span><span class="s4">svg</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>儲存並列印</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;/</span><span class="s4">button</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- 庫存管理分頁 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"tab-inventory"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"tab-content"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-xl shadow-sm border border-emerald-100 overflow-hidden"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"p-6 border-b border-emerald-50 bg-emerald-50/30 flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">h2</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold text-emerald-800"</span><span class="s3">&gt;</span><span class="s5">庫存管理</span><span class="s3">&lt;/</span><span class="s4">h2</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">label</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-emerald-600 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-emerald-700 transition flex items-center gap-2 shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">svg</span><span class="s5"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"h-5 w-5"</span><span class="s5"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s5"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s5"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s3">&gt;&lt;</span><span class="s4">path</span><span class="s5"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s5"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s5"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"</span><span class="s5"> </span><span class="s3">/&gt;&lt;/</span><span class="s4">svg</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>導入 Excel / CSV</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s4">input</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"file"</span><span class="s5"> </span><span class="s2">accept</span><span class="s3">=</span><span class="s1">".xlsx,.xls,.csv"</span><span class="s5"> </span><span class="s2">onchange</span><span class="s3">=</span><span class="s1">"handleExcelImport(event)"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s4">label</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"inventory-list"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"p-6 space-y-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!-- 動態生成庫存列表 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s4">main</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 修復：列印專用渲染區 --&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"pdf-render-container"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"pdf-template"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white text-black p-10 font-sans"</span><span class="s5"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"width: 210mm;"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">h1</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-center mb-10 tracking-widest"</span><span class="s3">&gt;</span><span class="s5">中醫處方箋</span><span class="s3">&lt;/</span><span class="s4">h1</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-3 gap-4 border-b-2 border-black pb-4 mb-8 text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s5">姓名：</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;&lt;</span><span class="s1">span</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s6">"pdf-p-name"</span><span class="s3">&gt;&lt;/</span><span class="s1">span</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s5">性別：</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;&lt;</span><span class="s1">span</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s6">"pdf-p-gender"</span><span class="s3">&gt;&lt;/</span><span class="s1">span</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s5">日期：</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;&lt;</span><span class="s1">span</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s6">"pdf-p-date"</span><span class="s3">&gt;&lt;/</span><span class="s1">span</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"col-span-3"</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s5">診斷：</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;</span><span class="s4">span</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"pdf-p-diag"</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"min-h-[450px]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"text-xl font-bold mb-4"</span><span class="s3">&gt;</span><span class="s1">中醫濃縮顆粒處方：</span><span class="s3">&lt;/</span><span class="s4">h3</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"pdf-meds-grid"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 gap-y-4 gap-x-10 text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!-- 藥品會在此處填充 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-10 border-t-2 border-gray-200 pt-6 space-y-3 text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"pdf-instructions"</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"font-bold"</span><span class="s3">&gt;&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"space-y-1 text-gray-700"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">醫囑：</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">中藥需與其他藥物或補充品相隔最少 2 小時服用。</span><span class="s3">&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">禁忌：</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">服藥期間忌煎炸油膩、辛辣生冷之品。若有不適請立即停藥並諮詢醫師。</span><span class="s3">&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-16 flex justify-end pr-10"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-right border-t border-black pt-4 min-w-[200px] space-y-1"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s6">"text-lg"</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s1">處方醫師：</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;</span><span class="s4">span</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s6">"pdf-doctor-name"</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s5"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s4">p</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-sm text-gray-600"</span><span class="s3">&gt;&lt;</span><span class="s4">strong</span><span class="s3">&gt;</span><span class="s5">註冊編號：</span><span class="s3">&lt;/</span><span class="s4">strong</span><span class="s3">&gt;&lt;</span><span class="s4">span</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"pdf-doctor-reg"</span><span class="s3">&gt;&lt;/</span><span class="s4">span</span><span class="s3">&gt;&lt;/</span><span class="s4">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- 腳本邏輯 --&gt;</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 狀態管理 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">let</span><span class="s1"> catalogues </span><span class="s7">=</span><span class="s1"> </span><span class="s12">JSON</span><span class="s7">.</span><span class="s1">parse</span><span class="s7">(</span><span class="s1">localStorage</span><span class="s7">.</span><span class="s1">getItem</span><span class="s7">(</span><span class="s13">'tcm_catalogues'</span><span class="s7">)</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'[]'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">let</span><span class="s1"> selectedMeds </span><span class="s7">=</span><span class="s1"> </span><span class="s7">[];</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">let</span><span class="s1"> activeTab </span><span class="s7">=</span><span class="s1"> </span><span class="s13">'prescription'</span><span class="s7">;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 初始化 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>window</span><span class="s7">.</span><span class="s1">onload </span><span class="s7">=</span><span class="s1"> </span><span class="s7">()</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-date'</span><span class="s7">).</span><span class="s1">valueAsDate </span><span class="s7">=</span><span class="s1"> </span><span class="s11">new</span><span class="s1"> </span><span class="s12">Date</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>renderInventory</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>updateCalculations</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">};</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 功能：分頁切換 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> switchTab</span><span class="s7">(</span><span class="s1">tabId</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>activeTab </span><span class="s7">=</span><span class="s1"> tabId</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">querySelectorAll</span><span class="s7">(</span><span class="s13">'.tab-content'</span><span class="s7">).</span><span class="s1">forEach</span><span class="s7">(</span><span class="s1">el </span><span class="s7">=&gt;</span><span class="s1"> el</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">remove</span><span class="s7">(</span><span class="s13">'active'</span><span class="s7">));</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">`tab-</span><span class="s7">${</span><span class="s1">tabId</span><span class="s7">}</span><span class="s13">`</span><span class="s7">).</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'active'</span><span class="s7">);</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">querySelectorAll</span><span class="s7">(</span><span class="s13">'nav button'</span><span class="s7">).</span><span class="s1">forEach</span><span class="s7">(</span><span class="s1">btn </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>btn</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">remove</span><span class="s7">(</span><span class="s13">'bg-emerald-100'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'text-emerald-800'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>btn</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'text-slate-600'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> activeBtn </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">`tab-btn-</span><span class="s7">${</span><span class="s1">tabId</span><span class="s7">}</span><span class="s13">`</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>activeBtn</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'bg-emerald-100'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'text-emerald-800'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 功能：提示訊息 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> notify</span><span class="s7">(</span><span class="s1">msg</span><span class="s7">,</span><span class="s1"> type </span><span class="s7">=</span><span class="s1"> </span><span class="s13">'success'</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> el </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'notification'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>el</span><span class="s7">.</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> msg</span><span class="s7">;</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">            </span>el</span><span class="s7">.</span><span class="s5">className </span><span class="s7">=</span><span class="s5"> </span><span class="s1">`fixed top-4 right-4 p-4 rounded-md shadow-lg z-[100] flex items-center space-x-2 text-white transform transition-transform duration-300 </span><span class="s7">${</span><span class="s5">type </span><span class="s7">===</span><span class="s5"> </span><span class="s1">'error'</span><span class="s5"> </span><span class="s7">?</span><span class="s5"> </span><span class="s1">'bg-red-500'</span><span class="s5"> </span><span class="s7">:</span><span class="s5"> </span><span class="s1">'bg-emerald-500'</span><span class="s7">}</span><span class="s1">`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>el</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">remove</span><span class="s7">(</span><span class="s13">'hidden'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'translate-x-full'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout</span><span class="s7">(()</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>el</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'translate-x-full'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout</span><span class="s7">(()</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> el</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'hidden'</span><span class="s7">),</span><span class="s1"> </span><span class="s14">300</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">},</span><span class="s1"> </span><span class="s14">3000</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 功能：Excel / CSV 導入 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> handleExcelImport</span><span class="s7">(</span><span class="s1">e</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> file </span><span class="s7">=</span><span class="s1"> e</span><span class="s7">.</span><span class="s1">target</span><span class="s7">.</span><span class="s1">files</span><span class="s7">[</span><span class="s14">0</span><span class="s7">];</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(!</span><span class="s1">file</span><span class="s7">)</span><span class="s1"> </span><span class="s11">return</span><span class="s7">;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> reader </span><span class="s7">=</span><span class="s1"> </span><span class="s11">new</span><span class="s1"> </span><span class="s12">FileReader</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>reader</span><span class="s7">.</span><span class="s1">onload </span><span class="s7">=</span><span class="s1"> </span><span class="s7">(</span><span class="s1">evt</span><span class="s7">)</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">try</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">const</span><span class="s1"> dataArr </span><span class="s7">=</span><span class="s1"> evt</span><span class="s7">.</span><span class="s1">target</span><span class="s7">.</span><span class="s1">result</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">const</span><span class="s1"> wb </span><span class="s7">=</span><span class="s1"> </span><span class="s12">XLSX</span><span class="s7">.</span><span class="s1">read</span><span class="s7">(</span><span class="s1">dataArr</span><span class="s7">,</span><span class="s1"> </span><span class="s7">{</span><span class="s1"> type</span><span class="s7">:</span><span class="s1"> </span><span class="s13">'binary'</span><span class="s1"> </span><span class="s7">});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">const</span><span class="s1"> ws </span><span class="s7">=</span><span class="s1"> wb</span><span class="s7">.</span><span class="s12">Sheets</span><span class="s7">[</span><span class="s1">wb</span><span class="s7">.</span><span class="s12">SheetNames</span><span class="s7">[</span><span class="s14">0</span><span class="s7">]];</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">const</span><span class="s1"> data </span><span class="s7">=</span><span class="s1"> </span><span class="s12">XLSX</span><span class="s7">.</span><span class="s1">utils</span><span class="s7">.</span><span class="s1">sheet_to_json</span><span class="s7">(</span><span class="s1">ws</span><span class="s7">);</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(</span><span class="s1">data</span><span class="s7">.</span><span class="s1">length </span><span class="s7">===</span><span class="s1"> </span><span class="s14">0</span><span class="s7">)</span><span class="s1"> </span><span class="s11">return</span><span class="s1"> notify</span><span class="s7">(</span><span class="s13">'檔案內容為空'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'error'</span><span class="s7">);</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">const</span><span class="s1"> manufacturer </span><span class="s7">=</span><span class="s1"> prompt</span><span class="s7">(</span><span class="s13">'請輸入藥廠或列表名稱：'</span><span class="s7">,</span><span class="s1"> file</span><span class="s7">.</span><span class="s1">name</span><span class="s7">.</span><span class="s1">split</span><span class="s7">(</span><span class="s13">'.'</span><span class="s7">)[</span><span class="s14">0</span><span class="s7">])</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'未命名藥廠'</span><span class="s7">;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">const</span><span class="s1"> newCat </span><span class="s7">=</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>id</span><span class="s7">:</span><span class="s1"> </span><span class="s12">Date</span><span class="s7">.</span><span class="s1">now</span><span class="s7">(),</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>manufacturer</span><span class="s7">:</span><span class="s1"> manufacturer</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>date</span><span class="s7">:</span><span class="s1"> </span><span class="s11">new</span><span class="s1"> </span><span class="s12">Date</span><span class="s7">().</span><span class="s1">toISOString</span><span class="s7">().</span><span class="s1">split</span><span class="s7">(</span><span class="s13">'T'</span><span class="s7">)[</span><span class="s14">0</span><span class="s7">],</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>medicines</span><span class="s7">:</span><span class="s1"> data</span><span class="s7">.</span><span class="s1">map</span><span class="s7">((</span><span class="s1">row</span><span class="s7">,</span><span class="s1"> i</span><span class="s7">)</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">({</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>uid</span><span class="s7">:</span><span class="s1"> </span><span class="s13">`</span><span class="s7">${</span><span class="s12">Date</span><span class="s7">.</span><span class="s1">now</span><span class="s7">()}</span><span class="s13">-</span><span class="s7">${</span><span class="s1">i</span><span class="s7">}</span><span class="s13">`</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>id</span><span class="s7">:</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'編號'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'ID'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'代碼'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> i </span><span class="s7">+</span><span class="s1"> </span><span class="s14">1</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>name</span><span class="s7">:</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'藥品名稱'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'名稱'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'Name'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'未知藥品'</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>concentration</span><span class="s7">:</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'濃度'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'參考濃度'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'-'</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>cost</span><span class="s7">:</span><span class="s1"> parseFloat</span><span class="s7">(</span><span class="s1">row</span><span class="s7">[</span><span class="s13">'成本'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'Cost'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s14">0</span><span class="s7">),</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>price</span><span class="s7">:</span><span class="s1"> parseFloat</span><span class="s7">(</span><span class="s1">row</span><span class="s7">[</span><span class="s13">'售價'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'Price'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> row</span><span class="s7">[</span><span class="s13">'價格'</span><span class="s7">]</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s14">0</span><span class="s7">)</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s7">}))</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s7">};</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>catalogues</span><span class="s7">.</span><span class="s1">unshift</span><span class="s7">(</span><span class="s1">newCat</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>localStorage</span><span class="s7">.</span><span class="s1">setItem</span><span class="s7">(</span><span class="s13">'tcm_catalogues'</span><span class="s7">,</span><span class="s1"> </span><span class="s12">JSON</span><span class="s7">.</span><span class="s1">stringify</span><span class="s7">(</span><span class="s1">catalogues</span><span class="s7">));</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>renderInventory</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>notify</span><span class="s7">(</span><span class="s13">`成功導入「</span><span class="s7">${</span><span class="s1">manufacturer</span><span class="s7">}</span><span class="s13">」，共 </span><span class="s7">${</span><span class="s1">newCat</span><span class="s7">.</span><span class="s1">medicines</span><span class="s7">.</span><span class="s1">length</span><span class="s7">}</span><span class="s13"> 筆藥品`</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">}</span><span class="s1"> </span><span class="s11">catch</span><span class="s1"> </span><span class="s7">(</span><span class="s1">err</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>notify</span><span class="s7">(</span><span class="s13">'解析檔案失敗，請檢查格式是否正確'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'error'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">};</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>reader</span><span class="s7">.</span><span class="s1">readAsBinaryString</span><span class="s7">(</span><span class="s1">file</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>e</span><span class="s7">.</span><span class="s1">target</span><span class="s7">.</span><span class="s1">value </span><span class="s7">=</span><span class="s1"> </span><span class="s13">''</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 功能：渲染庫存 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> renderInventory</span><span class="s7">()</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> list </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'inventory-list'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(</span><span class="s1">catalogues</span><span class="s7">.</span><span class="s1">length </span><span class="s7">===</span><span class="s1"> </span><span class="s14">0</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">                </span>list</span><span class="s7">.</span><span class="s5">innerHTML </span><span class="s7">=</span><span class="s5"> </span><span class="s1">`&lt;div class="text-center py-10 text-slate-400"&gt;尚無庫存資料，請點擊右上方導入&lt;/div&gt;`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>list</span><span class="s7">.</span><span class="s1">innerHTML </span><span class="s7">=</span><span class="s1"> catalogues</span><span class="s7">.</span><span class="s1">map</span><span class="s7">(</span><span class="s1">cat </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s13">`</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition shadow-sm"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-emerald-700 text-lg"&gt;</span><span class="s7">${</span><span class="s5">cat</span><span class="s7">.</span><span class="s5">manufacturer</span><span class="s7">}</span><span class="s1">&lt;/h4&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-slate-500"&gt;導入日期: </span><span class="s7">${</span><span class="s5">cat</span><span class="s7">.</span><span class="s5">date</span><span class="s7">}</span><span class="s1"> | 藥品數量: </span><span class="s7">${</span><span class="s5">cat</span><span class="s7">.</span><span class="s5">medicines</span><span class="s7">.</span><span class="s5">length</span><span class="s7">}</span><span class="s1">&lt;/p&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button onclick="deleteCatalogue(</span><span class="s7">${</span><span class="s5">cat</span><span class="s7">.</span><span class="s5">id</span><span class="s7">}</span><span class="s1">)" class="text-red-400 hover:bg-red-50 p-2 rounded-full"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /&gt;&lt;/svg&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span>`</span><span class="s7">).</span><span class="s5">join</span><span class="s7">(</span><span class="s1">''</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> deleteCatalogue</span><span class="s7">(</span><span class="s1">id</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(!</span><span class="s1">confirm</span><span class="s7">(</span><span class="s13">'確定要刪除此藥廠列表嗎？'</span><span class="s7">))</span><span class="s1"> </span><span class="s11">return</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>catalogues </span><span class="s7">=</span><span class="s1"> catalogues</span><span class="s7">.</span><span class="s1">filter</span><span class="s7">(</span><span class="s1">c </span><span class="s7">=&gt;</span><span class="s1"> c</span><span class="s7">.</span><span class="s1">id </span><span class="s7">!==</span><span class="s1"> id</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>localStorage</span><span class="s7">.</span><span class="s1">setItem</span><span class="s7">(</span><span class="s13">'tcm_catalogues'</span><span class="s7">,</span><span class="s1"> </span><span class="s12">JSON</span><span class="s7">.</span><span class="s1">stringify</span><span class="s7">(</span><span class="s1">catalogues</span><span class="s7">));</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>renderInventory</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>notify</span><span class="s7">(</span><span class="s13">'已刪除列表'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 功能：處方搜尋 ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> handleSearch</span><span class="s7">(</span><span class="s1">query</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> resultsDiv </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'search-results'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(!</span><span class="s1">query</span><span class="s7">.</span><span class="s1">trim</span><span class="s7">())</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>resultsDiv</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'hidden'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> allMeds </span><span class="s7">=</span><span class="s1"> catalogues</span><span class="s7">.</span><span class="s1">flatMap</span><span class="s7">(</span><span class="s1">cat </span><span class="s7">=&gt;</span><span class="s1"> cat</span><span class="s7">.</span><span class="s1">medicines</span><span class="s7">.</span><span class="s1">map</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">({...</span><span class="s1">m</span><span class="s7">,</span><span class="s1"> manufacturer</span><span class="s7">:</span><span class="s1"> cat</span><span class="s7">.</span><span class="s1">manufacturer</span><span class="s7">})));</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> q </span><span class="s7">=</span><span class="s1"> query</span><span class="s7">.</span><span class="s1">toLowerCase</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> filtered </span><span class="s7">=</span><span class="s1"> allMeds</span><span class="s7">.</span><span class="s1">filter</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>m</span><span class="s7">.</span><span class="s1">name</span><span class="s7">.</span><span class="s1">includes</span><span class="s7">(</span><span class="s1">q</span><span class="s7">)</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s12">String</span><span class="s7">(</span><span class="s1">m</span><span class="s7">.</span><span class="s1">id</span><span class="s7">).</span><span class="s1">includes</span><span class="s7">(</span><span class="s1">q</span><span class="s7">)</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">).</span><span class="s1">slice</span><span class="s7">(</span><span class="s14">0</span><span class="s7">,</span><span class="s1"> </span><span class="s14">15</span><span class="s7">);</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(</span><span class="s1">filtered</span><span class="s7">.</span><span class="s1">length </span><span class="s7">&gt;</span><span class="s1"> </span><span class="s14">0</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>resultsDiv</span><span class="s7">.</span><span class="s1">innerHTML </span><span class="s7">=</span><span class="s1"> filtered</span><span class="s7">.</span><span class="s1">map</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s13">`</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div onclick="addMed('</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">uid</span><span class="s7">}</span><span class="s1">')" class="p-3 hover:bg-emerald-50 cursor-pointer border-b last:border-0 flex justify-between items-center"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="font-bold"&gt;</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">name</span><span class="s7">}</span><span class="s1">&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="text-xs text-slate-500"&gt;</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">manufacturer</span><span class="s7">}</span><span class="s1"> | 編號: </span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">id</span><span class="s7">}</span><span class="s1">&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="text-emerald-600 font-bold"&gt;</span><span class="s15">$</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">price</span><span class="s7">}</span><span class="s1">/100g&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span>`</span><span class="s7">).</span><span class="s5">join</span><span class="s7">(</span><span class="s1">''</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>resultsDiv</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">remove</span><span class="s7">(</span><span class="s13">'hidden'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span><span class="s1"> </span><span class="s11">else</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">                </span>resultsDiv</span><span class="s7">.</span><span class="s5">innerHTML </span><span class="s7">=</span><span class="s5"> </span><span class="s1">`&lt;div class="p-4 text-center text-slate-400"&gt;找不到藥品&lt;/div&gt;`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>resultsDiv</span><span class="s7">.</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">remove</span><span class="s7">(</span><span class="s13">'hidden'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> addMed</span><span class="s7">(</span><span class="s1">uid</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(</span><span class="s1">selectedMeds</span><span class="s7">.</span><span class="s1">some</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> m</span><span class="s7">.</span><span class="s1">uid </span><span class="s7">===</span><span class="s1"> uid</span><span class="s7">))</span><span class="s1"> </span><span class="s11">return</span><span class="s1"> notify</span><span class="s7">(</span><span class="s13">'藥品已在清單中'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'error'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> allMeds </span><span class="s7">=</span><span class="s1"> catalogues</span><span class="s7">.</span><span class="s1">flatMap</span><span class="s7">(</span><span class="s1">cat </span><span class="s7">=&gt;</span><span class="s1"> cat</span><span class="s7">.</span><span class="s1">medicines</span><span class="s7">.</span><span class="s1">map</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">({...</span><span class="s1">m</span><span class="s7">,</span><span class="s1"> manufacturer</span><span class="s7">:</span><span class="s1"> cat</span><span class="s7">.</span><span class="s1">manufacturer</span><span class="s7">})));</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> med </span><span class="s7">=</span><span class="s1"> allMeds</span><span class="s7">.</span><span class="s1">find</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> m</span><span class="s7">.</span><span class="s1">uid </span><span class="s7">===</span><span class="s1"> uid</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>selectedMeds</span><span class="s7">.</span><span class="s1">push</span><span class="s7">({</span><span class="s1"> </span><span class="s7">...</span><span class="s1">med</span><span class="s7">,</span><span class="s1"> dailyDosage</span><span class="s7">:</span><span class="s1"> </span><span class="s14">1</span><span class="s1"> </span><span class="s7">});</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'med-search'</span><span class="s7">).</span><span class="s1">value </span><span class="s7">=</span><span class="s1"> </span><span class="s13">''</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'search-results'</span><span class="s7">).</span><span class="s1">classList</span><span class="s7">.</span><span class="s1">add</span><span class="s7">(</span><span class="s13">'hidden'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>renderSelectedMeds</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>updateCalculations</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> renderSelectedMeds</span><span class="s7">()</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> list </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'selected-meds-list'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> days </span><span class="s7">=</span><span class="s1"> parseInt</span><span class="s7">(</span><span class="s1">document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-days'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">)</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s14">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>list</span><span class="s7">.</span><span class="s1">innerHTML </span><span class="s7">=</span><span class="s1"> selectedMeds</span><span class="s7">.</span><span class="s1">map</span><span class="s7">(</span><span class="s1">med </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">const</span><span class="s1"> totalG </span><span class="s7">=</span><span class="s1"> </span><span class="s7">(</span><span class="s1">med</span><span class="s7">.</span><span class="s1">dailyDosage </span><span class="s7">*</span><span class="s1"> days</span><span class="s7">).</span><span class="s1">toFixed</span><span class="s7">(</span><span class="s14">1</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">const</span><span class="s1"> subtotal </span><span class="s7">=</span><span class="s1"> </span><span class="s12">Math</span><span class="s7">.</span><span class="s1">round</span><span class="s7">(</span><span class="s1">totalG </span><span class="s7">*</span><span class="s1"> </span><span class="s7">(</span><span class="s1">med</span><span class="s7">.</span><span class="s1">price </span><span class="s7">/</span><span class="s1"> </span><span class="s14">100</span><span class="s7">));</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s1"> </span><span class="s13">`</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tr class="hover:bg-slate-50 transition"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="font-bold text-slate-800"&gt;</span><span class="s7">${</span><span class="s5">med</span><span class="s7">.</span><span class="s5">name</span><span class="s7">}</span><span class="s1">&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="text-xs text-slate-400"&gt;</span><span class="s7">${</span><span class="s5">med</span><span class="s7">.</span><span class="s5">manufacturer</span><span class="s7">}</span><span class="s1"> [</span><span class="s7">${</span><span class="s5">med</span><span class="s7">.</span><span class="s5">concentration</span><span class="s7">}</span><span class="s1">]&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/td&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;input type="number" step="0.5" value="</span><span class="s7">${</span><span class="s5">med</span><span class="s7">.</span><span class="s5">dailyDosage</span><span class="s7">}</span><span class="s1">" onchange="updateMedDosage('</span><span class="s7">${</span><span class="s5">med</span><span class="s7">.</span><span class="s5">uid</span><span class="s7">}</span><span class="s1">', this.value)"<span class="Apple-converted-space"> </span></span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                                </span>class="w-20 p-1 border rounded text-center focus:ring-1 focus:ring-emerald-500"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/td&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3 text-right text-slate-600 font-mono"&gt;</span><span class="s7">${</span><span class="s5">totalG</span><span class="s7">}</span><span class="s1"> g&lt;/td&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3 text-right font-bold text-emerald-600 font-mono"&gt;</span><span class="s15">$</span><span class="s1"> </span><span class="s7">${</span><span class="s5">subtotal</span><span class="s7">}</span><span class="s1">&lt;/td&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3 text-center"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;button onclick="removeMed('</span><span class="s7">${</span><span class="s5">med</span><span class="s7">.</span><span class="s5">uid</span><span class="s7">}</span><span class="s1">')" class="text-red-300 hover:text-red-500 transition"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /&gt;&lt;/svg&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/td&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span>`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}).</span><span class="s1">join</span><span class="s7">(</span><span class="s13">''</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> updateMedDosage</span><span class="s7">(</span><span class="s1">uid</span><span class="s7">,</span><span class="s1"> val</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> med </span><span class="s7">=</span><span class="s1"> selectedMeds</span><span class="s7">.</span><span class="s1">find</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> m</span><span class="s7">.</span><span class="s1">uid </span><span class="s7">===</span><span class="s1"> uid</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(</span><span class="s1">med</span><span class="s7">)</span><span class="s1"> med</span><span class="s7">.</span><span class="s1">dailyDosage </span><span class="s7">=</span><span class="s1"> parseFloat</span><span class="s7">(</span><span class="s1">val</span><span class="s7">)</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s14">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>renderSelectedMeds</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>updateCalculations</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> removeMed</span><span class="s7">(</span><span class="s1">uid</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>selectedMeds </span><span class="s7">=</span><span class="s1"> selectedMeds</span><span class="s7">.</span><span class="s1">filter</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> m</span><span class="s7">.</span><span class="s1">uid </span><span class="s7">!==</span><span class="s1"> uid</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>renderSelectedMeds</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>updateCalculations</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> updateCalculations</span><span class="s7">()</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> days </span><span class="s7">=</span><span class="s1"> parseInt</span><span class="s7">(</span><span class="s1">document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-days'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">)</span><span class="s1"> </span><span class="s7">||</span><span class="s1"> </span><span class="s14">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> packets </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-packets'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">let</span><span class="s1"> dailyG </span><span class="s7">=</span><span class="s1"> </span><span class="s14">0</span><span class="s7">,</span><span class="s1"> total </span><span class="s7">=</span><span class="s1"> </span><span class="s14">0</span><span class="s7">,</span><span class="s1"> totalCost </span><span class="s7">=</span><span class="s1"> </span><span class="s14">0</span><span class="s7">;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>selectedMeds</span><span class="s7">.</span><span class="s1">forEach</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">const</span><span class="s1"> totalGrams </span><span class="s7">=</span><span class="s1"> m</span><span class="s7">.</span><span class="s1">dailyDosage </span><span class="s7">*</span><span class="s1"> days</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>dailyG </span><span class="s7">+=</span><span class="s1"> m</span><span class="s7">.</span><span class="s1">dailyDosage</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>total </span><span class="s7">+=</span><span class="s1"> totalGrams </span><span class="s7">*</span><span class="s1"> </span><span class="s7">(</span><span class="s1">m</span><span class="s7">.</span><span class="s1">price </span><span class="s7">/</span><span class="s1"> </span><span class="s14">100</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>totalCost </span><span class="s7">+=</span><span class="s1"> totalGrams </span><span class="s7">*</span><span class="s1"> </span><span class="s7">(</span><span class="s1">m</span><span class="s7">.</span><span class="s1">cost </span><span class="s7">/</span><span class="s1"> </span><span class="s14">100</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">});</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'calc-days'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> days</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'calc-daily-g'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> </span><span class="s13">`</span><span class="s7">${</span><span class="s1">dailyG</span><span class="s7">.</span><span class="s1">toFixed</span><span class="s7">(</span><span class="s14">1</span><span class="s7">)}</span><span class="s13"> g`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'calc-cost'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> </span><span class="s13">`</span><span class="s15">$</span><span class="s13"> </span><span class="s7">${</span><span class="s12">Math</span><span class="s7">.</span><span class="s1">round</span><span class="s7">(</span><span class="s1">totalCost</span><span class="s7">)}</span><span class="s13">`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'calc-total'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> </span><span class="s13">`</span><span class="s15">$</span><span class="s13"> </span><span class="s7">${</span><span class="s12">Math</span><span class="s7">.</span><span class="s1">round</span><span class="s7">(</span><span class="s1">total</span><span class="s7">)}</span><span class="s13">`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'summary-header'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> </span><span class="s13">`總共 </span><span class="s7">${</span><span class="s1">days</span><span class="s7">}</span><span class="s13"> 天 | 每日 </span><span class="s7">${</span><span class="s1">packets</span><span class="s7">}</span><span class="s13"> 次`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-days'</span><span class="s7">).</span><span class="s1">oninput </span><span class="s7">=</span><span class="s1"> </span><span class="s7">()</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s7">{</span><span class="s1"> renderSelectedMeds</span><span class="s7">();</span><span class="s1"> updateCalculations</span><span class="s7">();</span><span class="s1"> </span><span class="s7">};</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-packets'</span><span class="s7">).</span><span class="s1">oninput </span><span class="s7">=</span><span class="s1"> </span><span class="s7">()</span><span class="s1"> </span><span class="s7">=&gt;</span><span class="s1"> updateCalculations</span><span class="s7">();</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">function</span><span class="s1"> clearPrescription</span><span class="s7">()</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(!</span><span class="s1">confirm</span><span class="s7">(</span><span class="s13">'確定要清空當前處方嗎？'</span><span class="s7">))</span><span class="s1"> </span><span class="s11">return</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>selectedMeds </span><span class="s7">=</span><span class="s1"> </span><span class="s7">[];</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-name'</span><span class="s7">).</span><span class="s1">value </span><span class="s7">=</span><span class="s1"> </span><span class="s13">''</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-diag'</span><span class="s7">).</span><span class="s1">value </span><span class="s7">=</span><span class="s1"> </span><span class="s13">''</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>renderSelectedMeds</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>updateCalculations</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">// --- 功能：生成 PDF (修復截斷問題) ---</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s11">async</span><span class="s1"> </span><span class="s11">function</span><span class="s1"> generatePDF</span><span class="s7">()</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> name </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-name'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(!</span><span class="s1">name</span><span class="s7">)</span><span class="s1"> </span><span class="s11">return</span><span class="s1"> notify</span><span class="s7">(</span><span class="s13">'請輸入病患姓名'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'error'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">if</span><span class="s1"> </span><span class="s7">(</span><span class="s1">selectedMeds</span><span class="s7">.</span><span class="s1">length </span><span class="s7">===</span><span class="s1"> </span><span class="s14">0</span><span class="s7">)</span><span class="s1"> </span><span class="s11">return</span><span class="s1"> notify</span><span class="s7">(</span><span class="s13">'請先加入藥品'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'error'</span><span class="s7">);</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> days </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-days'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> packets </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-packets'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> docName </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-doctor'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> regNo </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'s-regno'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">// 填充 PDF 模板</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-p-name'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> name</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-p-gender'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-gender'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-p-date'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-date'</span><span class="s7">).</span><span class="s1">value</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-p-diag'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'p-diag'</span><span class="s7">).</span><span class="s1">value </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'未註明'</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-instructions'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> </span><span class="s13">`用法：沖服 </span><span class="s7">${</span><span class="s1">days</span><span class="s7">}</span><span class="s13"> 天，每天 </span><span class="s7">${</span><span class="s1">packets</span><span class="s7">}</span><span class="s13"> 次，每次 1 包，合共 </span><span class="s7">${</span><span class="s1">days </span><span class="s7">*</span><span class="s1"> packets</span><span class="s7">}</span><span class="s13"> 包，建議飯後服用。`</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-doctor-name'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> docName </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'________________'</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-doctor-reg'</span><span class="s7">).</span><span class="s1">innerText </span><span class="s7">=</span><span class="s1"> regNo </span><span class="s7">||</span><span class="s1"> </span><span class="s13">'________________'</span><span class="s7">;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> grid </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-meds-grid'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>grid</span><span class="s7">.</span><span class="s1">innerHTML </span><span class="s7">=</span><span class="s1"> selectedMeds</span><span class="s7">.</span><span class="s1">map</span><span class="s7">(</span><span class="s1">m </span><span class="s7">=&gt;</span><span class="s1"> </span><span class="s13">`</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between border-b border-dotted border-gray-400 pb-1"&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="font-medium"&gt;</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">name</span><span class="s7">}</span><span class="s1"> &lt;small class="text-gray-500 text-xs"&gt;(</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">manufacturer</span><span class="s7">}</span><span class="s1">)&lt;/small&gt;&lt;/span&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span class="font-mono"&gt;</span><span class="s7">${</span><span class="s5">m</span><span class="s7">.</span><span class="s5">dailyDosage</span><span class="s7">}</span><span class="s1"> g&lt;/span&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span>`</span><span class="s7">).</span><span class="s5">join</span><span class="s7">(</span><span class="s1">''</span><span class="s7">);</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">// 強制設定渲染容器為可見狀態，html2pdf 抓取完會自動還原</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> container </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-render-container'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>container</span><span class="s7">.</span><span class="s1">style</span><span class="s7">.</span><span class="s1">visibility </span><span class="s7">=</span><span class="s1"> </span><span class="s13">'visible'</span><span class="s7">;</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> element </span><span class="s7">=</span><span class="s1"> document</span><span class="s7">.</span><span class="s1">getElementById</span><span class="s7">(</span><span class="s13">'pdf-template'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> opt </span><span class="s7">=</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>margin</span><span class="s7">:</span><span class="s1"> </span><span class="s14">0</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>filename</span><span class="s7">:</span><span class="s1"> </span><span class="s13">`處方_</span><span class="s7">${</span><span class="s1">name</span><span class="s7">}</span><span class="s13">_</span><span class="s7">${</span><span class="s11">new</span><span class="s1"> </span><span class="s12">Date</span><span class="s7">().</span><span class="s1">toISOString</span><span class="s7">().</span><span class="s1">split</span><span class="s7">(</span><span class="s13">'T'</span><span class="s7">)[</span><span class="s14">0</span><span class="s7">]}</span><span class="s13">.pdf`</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>image</span><span class="s7">:</span><span class="s1"> </span><span class="s7">{</span><span class="s1"> type</span><span class="s7">:</span><span class="s1"> </span><span class="s13">'jpeg'</span><span class="s7">,</span><span class="s1"> quality</span><span class="s7">:</span><span class="s1"> </span><span class="s14">0.98</span><span class="s1"> </span><span class="s7">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>html2canvas</span><span class="s7">:</span><span class="s1"> </span><span class="s7">{</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>scale</span><span class="s7">:</span><span class="s1"> </span><span class="s14">2</span><span class="s7">,</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>useCORS</span><span class="s7">:</span><span class="s1"> </span><span class="s11">true</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>scrollY</span><span class="s7">:</span><span class="s1"> </span><span class="s14">0</span><span class="s7">,</span><span class="s1"> </span><span class="s10">// 重要：強制座標從 0 開始，避免因頁面捲動導致截斷</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>scrollX</span><span class="s7">:</span><span class="s1"> </span><span class="s14">0</span><span class="s7">,</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>windowHeight</span><span class="s7">:</span><span class="s1"> element</span><span class="s7">.</span><span class="s1">offsetHeight </span><span class="s10">// 強制視窗高度等於元素高度</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">},</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>jsPDF</span><span class="s7">:</span><span class="s1"> </span><span class="s7">{</span><span class="s1"> unit</span><span class="s7">:</span><span class="s1"> </span><span class="s13">'mm'</span><span class="s7">,</span><span class="s1"> format</span><span class="s7">:</span><span class="s1"> </span><span class="s13">'a4'</span><span class="s7">,</span><span class="s1"> orientation</span><span class="s7">:</span><span class="s1"> </span><span class="s13">'portrait'</span><span class="s1"> </span><span class="s7">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">};</span></p>
-<p class="p6"><span class="s9"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>notify</span><span class="s7">(</span><span class="s13">'正在生成 PDF，請稍候...'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">try</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">await</span><span class="s1"> html2pdf</span><span class="s7">().</span><span class="s11">set</span><span class="s7">(</span><span class="s1">opt</span><span class="s7">).</span><span class="s11">from</span><span class="s7">(</span><span class="s1">element</span><span class="s7">).</span><span class="s1">save</span><span class="s7">();</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>notify</span><span class="s7">(</span><span class="s13">'PDF 已成功生成並下載'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span><span class="s1"> </span><span class="s11">catch</span><span class="s1"> </span><span class="s7">(</span><span class="s1">err</span><span class="s7">)</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>console</span><span class="s7">.</span><span class="s1">error</span><span class="s7">(</span><span class="s1">err</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>notify</span><span class="s7">(</span><span class="s13">'PDF 生成失敗'</span><span class="s7">,</span><span class="s1"> </span><span class="s13">'error'</span><span class="s7">);</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span><span class="s1"> </span><span class="s11">finally</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>container</span><span class="s7">.</span><span class="s1">style</span><span class="s7">.</span><span class="s1">visibility </span><span class="s7">=</span><span class="s1"> </span><span class="s13">'hidden'</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">}</span></p>
-<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+<body class="bg-emerald-50 text-slate-800 font-sans min-h-screen">
+
+    <!-- 頂部導航 -->
+    <header class="bg-white shadow-sm no-print sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 text-emerald-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                <h1 class="text-2xl font-bold tracking-tight">中醫智慧開藥系統</h1>
+            </div>
+            <nav class="flex space-x-2">
+                <button onclick="switchTab('prescription')" id="tab-btn-prescription" class="px-4 py-2 rounded-md font-medium transition bg-emerald-100 text-emerald-800">處方開立</button>
+                <button onclick="switchTab('inventory')" id="tab-btn-inventory" class="px-4 py-2 rounded-md font-medium transition text-slate-600 hover:bg-slate-100">藥品庫存管理</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 提示訊息 -->
+    <div id="notification" class="fixed top-4 right-4 p-4 rounded-md shadow-lg z-[100] flex items-center space-x-2 text-white transform translate-x-full transition-transform duration-300 hidden"></div>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 no-print">
+        
+        <!-- 處方開立分頁 -->
+        <div id="tab-prescription" class="tab-content active">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- 左側：輸入區域 -->
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100">
+                        <h3 class="font-bold text-emerald-800 mb-4 border-b pb-2">病患資訊</h3>
+                        <div class="space-y-3">
+                            <input type="text" id="p-name" placeholder="病患姓名" class="w-full p-2 border rounded focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <div class="flex gap-2">
+                                <select id="p-gender" class="w-1/2 p-2 border rounded"><option>男</option><option>女</option></select>
+                                <input type="number" id="p-age" placeholder="年齡" class="w-1/2 p-2 border rounded">
+                            </div>
+                            <input type="date" id="p-date" class="w-full p-2 border rounded">
+                            <textarea id="p-diag" placeholder="診斷 / 症狀" class="w-full p-2 border rounded" rows="2"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100">
+                        <h3 class="font-bold text-emerald-800 mb-4 border-b pb-2">處方設定與加藥</h3>
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div><label class="text-xs text-slate-500">服用天數</label><input type="number" id="s-days" value="7" class="w-full p-2 border rounded text-center font-bold"></div>
+                            <div><label class="text-xs text-slate-500">每日次數</label><input type="number" id="s-packets" value="2" class="w-full p-2 border rounded text-center font-bold"></div>
+                            <div class="col-span-2 mt-2">
+                                <label class="text-xs text-slate-500">醫師姓名 (列印用)</label>
+                                <input type="text" id="s-doctor" placeholder="醫師簽章姓名" class="w-full p-2 border rounded">
+                            </div>
+                            <div class="col-span-2">
+                                <label class="text-xs text-slate-500">註冊編號 (列印用)</label>
+                                <input type="text" id="s-regno" placeholder="例如: 00XXXX" class="w-full p-2 border rounded">
+                            </div>
+                        </div>
+                        <div class="relative mt-4">
+                            <input type="text" id="med-search" oninput="handleSearch(this.value)" placeholder="搜尋藥品名稱或編號..." class="w-full p-3 pl-10 border-2 border-emerald-200 rounded-lg outline-none focus:border-emerald-500">
+                            <div class="absolute left-3 top-3.5 text-slate-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </div>
+                            <!-- 搜尋結果 -->
+                            <div id="search-results" class="absolute z-50 w-full bg-white mt-1 border rounded-lg shadow-xl max-h-60 overflow-y-auto hidden"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右側：處方明細 -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-emerald-100 min-h-[400px] flex flex-col">
+                        <h3 class="font-bold text-emerald-800 mb-4 border-b pb-2 flex justify-between">
+                            <span>處方清單</span>
+                            <span id="summary-header" class="text-sm font-normal text-slate-500"></span>
+                        </h3>
+                        <div class="flex-1 overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-slate-50 text-xs text-slate-500 uppercase">
+                                    <tr>
+                                        <th class="p-3 text-left">藥品名稱</th>
+                                        <th class="p-3 text-center">每日 (g)</th>
+                                        <th class="p-3 text-right">總量 (g)</th>
+                                        <th class="p-3 text-right">小計</th>
+                                        <th class="p-3 text-center w-10"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="selected-meds-list" class="divide-y">
+                                    <!-- 動態生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-6 bg-slate-800 text-white p-6 rounded-xl">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                                <div><div class="text-xs text-slate-400">總天數</div><div id="calc-days" class="text-xl font-bold">0</div></div>
+                                <div><div class="text-xs text-slate-400">每日總量</div><div id="calc-daily-g" class="text-xl font-bold">0 g</div></div>
+                                <div><div class="text-xs text-slate-400">估算成本</div><div id="calc-cost" class="text-xl font-bold text-slate-300">$ 0</div></div>
+                                <div><div class="text-xs text-emerald-400 font-bold">總售價</div><div id="calc-total" class="text-2xl font-bold text-emerald-400">$ 0</div></div>
+                            </div>
+                            <div class="flex gap-3">
+                                <button onclick="clearPrescription()" class="flex-1 py-2 border border-slate-600 rounded hover:bg-slate-700 transition">清空</button>
+                                <button onclick="generatePDF()" class="flex-[2] py-2 bg-emerald-500 rounded font-bold hover:bg-emerald-400 transition flex items-center justify-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
+                                    儲存並列印
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 庫存管理分頁 -->
+        <div id="tab-inventory" class="tab-content">
+            <div class="bg-white rounded-xl shadow-sm border border-emerald-100 overflow-hidden">
+                <div class="p-6 border-b border-emerald-50 bg-emerald-50/30 flex justify-between items-center">
+                    <h2 class="text-xl font-bold text-emerald-800">庫存管理</h2>
+                    <label class="bg-emerald-600 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-emerald-700 transition flex items-center gap-2 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                        導入 Excel / CSV
+                        <input type="file" accept=".xlsx,.xls,.csv" onchange="handleExcelImport(event)" class="hidden">
+                    </label>
+                </div>
+                <div id="inventory-list" class="p-6 space-y-4">
+                    <!-- 動態生成庫存列表 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 修復：列印專用渲染區 -->
+    <div id="pdf-render-container">
+        <div id="pdf-template" class="bg-white text-black p-10 font-sans" style="width: 210mm;">
+            <h1 class="text-3xl font-bold text-center mb-10 tracking-widest">中醫處方箋</h1>
+            
+            <div class="grid grid-cols-3 gap-4 border-b-2 border-black pb-4 mb-8 text-lg">
+                <p><strong>姓名：</strong><span id="pdf-p-name"></span></p>
+                <p><strong>性別：</strong><span id="pdf-p-gender"></span></p>
+                <p><strong>日期：</strong><span id="pdf-p-date"></span></p>
+                <p class="col-span-3"><strong>診斷：</strong><span id="pdf-p-diag"></span></p>
+            </div>
+
+            <div class="min-h-[450px]">
+                <h3 class="text-xl font-bold mb-4">中醫濃縮顆粒處方：</h3>
+                <div id="pdf-meds-grid" class="grid grid-cols-2 gap-y-4 gap-x-10 text-lg">
+                    <!-- 藥品會在此處填充 -->
+                </div>
+            </div>
+
+            <div class="mt-10 border-t-2 border-gray-200 pt-6 space-y-3 text-lg">
+                <p id="pdf-instructions" class="font-bold"></p>
+                <div class="space-y-1 text-gray-700">
+                    <p><strong>醫囑：</strong>中藥需與其他藥物或補充品相隔最少 2 小時服用。</p>
+                    <p><strong>禁忌：</strong>服藥期間忌煎炸油膩、辛辣生冷之品。若有不適請立即停藥並諮詢醫師。</p>
+                </div>
+            </div>
+
+            <div class="mt-16 flex justify-end pr-10">
+                <div class="text-right border-t border-black pt-4 min-w-[200px] space-y-1">
+                    <p class="text-lg"><strong>處方醫師：</strong><span id="pdf-doctor-name"></span></p>
+                    <p class="text-sm text-gray-600"><strong>註冊編號：</strong><span id="pdf-doctor-reg"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 腳本邏輯 -->
+    <script>
+        // --- 狀態管理 ---
+        let catalogues = JSON.parse(localStorage.getItem('tcm_catalogues') || '[]');
+        let selectedMeds = [];
+        let activeTab = 'prescription';
+
+        // --- 初始化 ---
+        window.onload = () => {
+            document.getElementById('p-date').valueAsDate = new Date();
+            renderInventory();
+            updateCalculations();
+        };
+
+        // --- 功能：分頁切換 ---
+        function switchTab(tabId) {
+            activeTab = tabId;
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('bg-emerald-100', 'text-emerald-800');
+                btn.classList.add('text-slate-600');
+            });
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            activeBtn.classList.add('bg-emerald-100', 'text-emerald-800');
+        }
+
+        // --- 功能：提示訊息 ---
+        function notify(msg, type = 'success') {
+            const el = document.getElementById('notification');
+            el.innerText = msg;
+            el.className = `fixed top-4 right-4 p-4 rounded-md shadow-lg z-[100] flex items-center space-x-2 text-white transform transition-transform duration-300 ${type === 'error' ? 'bg-red-500' : 'bg-emerald-500'}`;
+            el.classList.remove('hidden', 'translate-x-full');
+            setTimeout(() => {
+                el.classList.add('translate-x-full');
+                setTimeout(() => el.classList.add('hidden'), 300);
+            }, 3000);
+        }
+
+        // --- 功能：Excel / CSV 導入 ---
+        function handleExcelImport(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                try {
+                    const dataArr = evt.target.result;
+                    const wb = XLSX.read(dataArr, { type: 'binary' });
+                    const ws = wb.Sheets[wb.SheetNames[0]];
+                    const data = XLSX.utils.sheet_to_json(ws);
+
+                    if (data.length === 0) return notify('檔案內容為空', 'error');
+
+                    const manufacturer = prompt('請輸入藥廠或列表名稱：', file.name.split('.')[0]) || '未命名藥廠';
+                    
+                    const newCat = {
+                        id: Date.now(),
+                        manufacturer: manufacturer,
+                        date: new Date().toISOString().split('T')[0],
+                        medicines: data.map((row, i) => ({
+                            uid: `${Date.now()}-${i}`,
+                            id: row['編號'] || row['ID'] || row['代碼'] || i + 1,
+                            name: row['藥品名稱'] || row['名稱'] || row['Name'] || '未知藥品',
+                            concentration: row['濃度'] || row['參考濃度'] || '-',
+                            cost: parseFloat(row['成本'] || row['Cost'] || 0),
+                            price: parseFloat(row['售價'] || row['Price'] || row['價格'] || 0)
+                        }))
+                    };
+
+                    catalogues.unshift(newCat);
+                    localStorage.setItem('tcm_catalogues', JSON.stringify(catalogues));
+                    renderInventory();
+                    notify(`成功導入「${manufacturer}」，共 ${newCat.medicines.length} 筆藥品`);
+                } catch (err) {
+                    notify('解析檔案失敗，請檢查格式是否正確', 'error');
+                }
+            };
+            reader.readAsBinaryString(file);
+            e.target.value = '';
+        }
+
+        // --- 功能：渲染庫存 ---
+        function renderInventory() {
+            const list = document.getElementById('inventory-list');
+            if (catalogues.length === 0) {
+                list.innerHTML = `<div class="text-center py-10 text-slate-400">尚無庫存資料，請點擊右上方導入</div>`;
+                return;
+            }
+
+            list.innerHTML = catalogues.map(cat => `
+                <div class="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition shadow-sm">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 text-lg">${cat.manufacturer}</h4>
+                        <p class="text-sm text-slate-500">導入日期: ${cat.date} | 藥品數量: ${cat.medicines.length}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="deleteCatalogue(${cat.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function deleteCatalogue(id) {
+            if (!confirm('確定要刪除此藥廠列表嗎？')) return;
+            catalogues = catalogues.filter(c => c.id !== id);
+            localStorage.setItem('tcm_catalogues', JSON.stringify(catalogues));
+            renderInventory();
+            notify('已刪除列表');
+        }
+
+        // --- 功能：處方搜尋 ---
+        function handleSearch(query) {
+            const resultsDiv = document.getElementById('search-results');
+            if (!query.trim()) {
+                resultsDiv.classList.add('hidden');
+                return;
+            }
+
+            const allMeds = catalogues.flatMap(cat => cat.medicines.map(m => ({...m, manufacturer: cat.manufacturer})));
+            const q = query.toLowerCase();
+            const filtered = allMeds.filter(m => 
+                m.name.includes(q) || String(m.id).includes(q)
+            ).slice(0, 15);
+
+            if (filtered.length > 0) {
+                resultsDiv.innerHTML = filtered.map(m => `
+                    <div onclick="addMed('${m.uid}')" class="p-3 hover:bg-emerald-50 cursor-pointer border-b last:border-0 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold">${m.name}</div>
+                            <div class="text-xs text-slate-500">${m.manufacturer} | 編號: ${m.id}</div>
+                        </div>
+                        <div class="text-emerald-600 font-bold">$${m.price}/100g</div>
+                    </div>
+                `).join('');
+                resultsDiv.classList.remove('hidden');
+            } else {
+                resultsDiv.innerHTML = `<div class="p-4 text-center text-slate-400">找不到藥品</div>`;
+                resultsDiv.classList.remove('hidden');
+            }
+        }
+
+        function addMed(uid) {
+            if (selectedMeds.some(m => m.uid === uid)) return notify('藥品已在清單中', 'error');
+            const allMeds = catalogues.flatMap(cat => cat.medicines.map(m => ({...m, manufacturer: cat.manufacturer})));
+            const med = allMeds.find(m => m.uid === uid);
+            selectedMeds.push({ ...med, dailyDosage: 1 });
+            document.getElementById('med-search').value = '';
+            document.getElementById('search-results').classList.add('hidden');
+            renderSelectedMeds();
+            updateCalculations();
+        }
+
+        function renderSelectedMeds() {
+            const list = document.getElementById('selected-meds-list');
+            const days = parseInt(document.getElementById('s-days').value) || 0;
+            list.innerHTML = selectedMeds.map(med => {
+                const totalG = (med.dailyDosage * days).toFixed(1);
+                const subtotal = Math.round(totalG * (med.price / 100));
+                return `
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-3">
+                            <div class="font-bold text-slate-800">${med.name}</div>
+                            <div class="text-xs text-slate-400">${med.manufacturer} [${med.concentration}]</div>
+                        </td>
+                        <td class="p-3">
+                            <input type="number" step="0.5" value="${med.dailyDosage}" onchange="updateMedDosage('${med.uid}', this.value)" 
+                                class="w-20 p-1 border rounded text-center focus:ring-1 focus:ring-emerald-500">
+                        </td>
+                        <td class="p-3 text-right text-slate-600 font-mono">${totalG} g</td>
+                        <td class="p-3 text-right font-bold text-emerald-600 font-mono">$ ${subtotal}</td>
+                        <td class="p-3 text-center">
+                            <button onclick="removeMed('${med.uid}')" class="text-red-300 hover:text-red-500 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateMedDosage(uid, val) {
+            const med = selectedMeds.find(m => m.uid === uid);
+            if (med) med.dailyDosage = parseFloat(val) || 0;
+            renderSelectedMeds();
+            updateCalculations();
+        }
+
+        function removeMed(uid) {
+            selectedMeds = selectedMeds.filter(m => m.uid !== uid);
+            renderSelectedMeds();
+            updateCalculations();
+        }
+
+        function updateCalculations() {
+            const days = parseInt(document.getElementById('s-days').value) || 0;
+            const packets = document.getElementById('s-packets').value;
+            let dailyG = 0, total = 0, totalCost = 0;
+
+            selectedMeds.forEach(m => {
+                const totalGrams = m.dailyDosage * days;
+                dailyG += m.dailyDosage;
+                total += totalGrams * (m.price / 100);
+                totalCost += totalGrams * (m.cost / 100);
+            });
+
+            document.getElementById('calc-days').innerText = days;
+            document.getElementById('calc-daily-g').innerText = `${dailyG.toFixed(1)} g`;
+            document.getElementById('calc-cost').innerText = `$ ${Math.round(totalCost)}`;
+            document.getElementById('calc-total').innerText = `$ ${Math.round(total)}`;
+            document.getElementById('summary-header').innerText = `總共 ${days} 天 | 每日 ${packets} 次`;
+        }
+
+        document.getElementById('s-days').oninput = () => { renderSelectedMeds(); updateCalculations(); };
+        document.getElementById('s-packets').oninput = () => updateCalculations();
+
+        function clearPrescription() {
+            if (!confirm('確定要清空當前處方嗎？')) return;
+            selectedMeds = [];
+            document.getElementById('p-name').value = '';
+            document.getElementById('p-diag').value = '';
+            renderSelectedMeds();
+            updateCalculations();
+        }
+
+        // --- 功能：生成 PDF (修復截斷問題) ---
+        async function generatePDF() {
+            const name = document.getElementById('p-name').value;
+            if (!name) return notify('請輸入病患姓名', 'error');
+            if (selectedMeds.length === 0) return notify('請先加入藥品', 'error');
+
+            const days = document.getElementById('s-days').value;
+            const packets = document.getElementById('s-packets').value;
+            const docName = document.getElementById('s-doctor').value;
+            const regNo = document.getElementById('s-regno').value;
+
+            // 填充 PDF 模板
+            document.getElementById('pdf-p-name').innerText = name;
+            document.getElementById('pdf-p-gender').innerText = document.getElementById('p-gender').value;
+            document.getElementById('pdf-p-date').innerText = document.getElementById('p-date').value;
+            document.getElementById('pdf-p-diag').innerText = document.getElementById('p-diag').value || '未註明';
+            document.getElementById('pdf-instructions').innerText = `用法：沖服 ${days} 天，每天 ${packets} 次，每次 1 包，合共 ${days * packets} 包，建議飯後服用。`;
+            document.getElementById('pdf-doctor-name').innerText = docName || '________________';
+            document.getElementById('pdf-doctor-reg').innerText = regNo || '________________';
+
+            const grid = document.getElementById('pdf-meds-grid');
+            grid.innerHTML = selectedMeds.map(m => `
+                <div class="flex justify-between border-b border-dotted border-gray-400 pb-1">
+                    <span class="font-medium">${m.name} <small class="text-gray-500 text-xs">(${m.manufacturer})</small></span>
+                    <span class="font-mono">${m.dailyDosage} g</span>
+                </div>
+            `).join('');
+
+            // 強制設定渲染容器為可見狀態，html2pdf 抓取完會自動還原
+            const container = document.getElementById('pdf-render-container');
+            container.style.visibility = 'visible';
+
+            const element = document.getElementById('pdf-template');
+            const opt = {
+                margin: 0,
+                filename: `處方_${name}_${new Date().toISOString().split('T')[0]}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,
+                    scrollY: 0, // 重要：強制座標從 0 開始，避免因頁面捲動導致截斷
+                    scrollX: 0,
+                    windowHeight: element.offsetHeight // 強制視窗高度等於元素高度
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            notify('正在生成 PDF，請稍候...');
+            try {
+                await html2pdf().set(opt).from(element).save();
+                notify('PDF 已成功生成並下載');
+            } catch (err) {
+                console.error(err);
+                notify('PDF 生成失敗', 'error');
+            } finally {
+                container.style.visibility = 'hidden';
+            }
+        }
+    </script>
 </body>
 </html>
