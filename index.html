@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #c27e65; -webkit-text-stroke: #c27e65}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #8cd3fe; -webkit-text-stroke: #8cd3fe}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d7378; -webkit-text-stroke: #6d7378}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #71c083; -webkit-text-stroke: #71c083}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca; min-height: 16.0px}
+    span.s1 {font-kerning: none; background-color: #171818}
+    span.s2 {font-kerning: none; color: #8cd3fe; background-color: #171818; -webkit-text-stroke: 0px #8cd3fe}
+    span.s3 {font-kerning: none; color: #6d6d6d; background-color: #171818; -webkit-text-stroke: 0px #6d6d6d}
+    span.s4 {font-kerning: none; color: #4689cc; background-color: #171818; -webkit-text-stroke: 0px #4689cc}
+    span.s5 {font-kerning: none; color: #cacaca; background-color: #171818; -webkit-text-stroke: 0px #cacaca}
+    span.s6 {font-kerning: none; color: #c27e65; background-color: #171818; -webkit-text-stroke: 0px #c27e65}
+    span.s7 {font-kerning: none; color: #b76ff7; background-color: #171818; -webkit-text-stroke: 0px #b76ff7}
+    span.s8 {font-kerning: none; color: #d4d4d4; background-color: #171818; -webkit-text-stroke: 0px #d4d4d4}
+    span.s9 {font-kerning: none; color: #71c083; background-color: #171818; -webkit-text-stroke: 0px #71c083}
+    span.s10 {font-kerning: none; color: #a7c598; background-color: #171818; -webkit-text-stroke: 0px #a7c598}
+    span.s11 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;</span><span class="s4">html</span><span class="s5"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s1">"zh-TW"</span><span class="s3">&gt;</span></p>
+<p class="p1"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">中醫智慧開藥系統</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Tailwind CSS --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- React &amp; ReactDOM --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react@18/umd/react.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Babel for JSX --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/@babel/standalone/babel.min.js"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Lucide Icons --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://unpkg.com/lucide@latest"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s7">@import</span><span class="s5"> </span><span class="s6">url</span><span class="s8">(</span><span class="s1">'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap'</span><span class="s8">);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">body</span><span class="s1"> </span><span class="s8">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s1"> </span><span class="s9">'Noto Sans TC'</span><span class="s8">,</span><span class="s1"> </span><span class="s6">sans-serif</span><span class="s8">;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s8">}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>@</span><span class="s4">media</span><span class="s1"> </span><span class="s4">print</span><span class="s1"> </span><span class="s8">{</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>.print-hidden { </span><span class="s2">display:</span><span class="s1"> </span><span class="s6">none</span><span class="s1"> </span><span class="s7">!important</span><span class="s8">;</span><span class="s1"> </span><span class="s8">}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">/* 自定義捲軸 */</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar</span><span class="s5"> </span><span class="s8">{</span><span class="s5"> </span><span class="s2">width:</span><span class="s5"> </span><span class="s10">6px</span><span class="s8">;</span><span class="s5"> </span><span class="s8">}</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar-track</span><span class="s5"> </span><span class="s8">{</span><span class="s5"> </span><span class="s2">background:</span><span class="s5"> #f1f1f1</span><span class="s8">;</span><span class="s5"> </span><span class="s8">}</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar-thumb</span><span class="s5"> </span><span class="s8">{</span><span class="s5"> </span><span class="s2">background:</span><span class="s5"> #10b981</span><span class="s8">;</span><span class="s5"> </span><span class="s2">border-radius:</span><span class="s5"> </span><span class="s10">10px</span><span class="s8">;</span><span class="s5"> </span><span class="s8">}</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p1"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;</span><span class="s4">body</span><span class="s5"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-emerald-50"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"root"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text/babel"</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>const { useState, useEffect, useMemo, useRef } = React;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// ==========================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// Lucide 圖標組件 (修正後的「命令式渲染」版本)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// 解決 React 與 Lucide.createIcons() 衝突導致的 removeChild 錯誤</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// ==========================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>const Icon = ({ name, className = "h-5 w-5", ...props }) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const containerRef = useRef(null);</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (window.lucide &amp;&amp; containerRef.current) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>// 1. 將 PascalCase 轉換為 kebab-case</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const kebabName = name</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>.replace(/([a-z0-9])([A-Z])/g, '$1-$2')</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>.replace(/([a-z])([0-9])/g, '$1-$2')</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>.toLowerCase();</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>// 2. 手動清理並建立一個不被 React 追蹤的 DOM 節點</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>containerRef.current.innerHTML = '';</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const i = document.createElement('i');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>i.setAttribute('data-lucide', kebabName);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>i.className = className;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>// 3. 附加並渲染</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>containerRef.current.appendChild(i);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>window.lucide.createIcons({</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>elements: [i]</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}, [name, className]);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>// 使用 span 作為容器，內部由上面的 useEffect 手動操作，避免 React 干涉子節點</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>return &lt;span ref={containerRef} className="inline-flex items-center justify-center" {...props} /&gt;;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// ==========================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">  </span>後端與資料庫接口 (Backend API Interfaces)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// ==========================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>const api = {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>getCatalogues: async () =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const catData = localStorage.getItem('tcm_catalogues');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (catData) return JSON.parse(catData);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const legacyData = localStorage.getItem('tcm_medicines');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (legacyData) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const parsed = JSON.parse(legacyData);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>if (parsed.length &gt; 0) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const legacyCatalogue = {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>id: `cat_legacy_${Date.now()}`,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>manufacturer: '原始導入庫存',</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>importDate: new Date().toISOString().split('T')[0],</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>medicines: parsed.map((m, i) =&gt; ({ ...m, uid: m.uid || `existing_${Date.now()}_${i}` }))</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>};</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>localStorage.setItem('tcm_catalogues', JSON.stringify([legacyCatalogue]));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>return [legacyCatalogue];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return [];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>saveCatalogues: async (catalogues) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>localStorage.setItem('tcm_catalogues', JSON.stringify(catalogues));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return true;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>savePrescription: async (prescription) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const existingStr = localStorage.getItem('tcm_prescriptions');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const existing = existingStr ? JSON.parse(existingStr) : [];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const newRecord = { ...prescription, id: Date.now(), createdAt: new Date().toISOString() };</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>localStorage.setItem('tcm_prescriptions', JSON.stringify([newRecord, ...existing]));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return newRecord;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// ==========================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// 主應用程式元件</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>// ==========================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>function App() {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [activeTab, setActiveTab] = useState('prescription');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [loading, setLoading] = useState(true);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [notification, setNotification] = useState(null);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [catalogues, setCatalogues] = useState([]);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [pendingImport, setPendingImport] = useState(null);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [importForm, setImportForm] = useState({ manufacturer: '', importDate: new Date().toISOString().split('T')[0] });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [viewCatalogue, setViewCatalogue] = useState(null);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [patientInfo, setPatientInfo] = useState({ name: '', gender: '男', age: '', date: new Date().toISOString().split('T')[0], diagnosis: '' });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [settings, setSettings] = useState({ days: 7, packetsPerDay: 2, doctorName: '', doctorRegNo: '' });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [selectedMeds, setSelectedMeds] = useState([]);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const [searchQuery, setSearchQuery] = useState('');</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>loadData();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}, []);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const loadData = async () =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>try {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setLoading(true);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const cats = await api.getCatalogues();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setCatalogues(cats);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} catch (err) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('載入藥庫失敗', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} finally {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setLoading(false);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const showNotification = (msg, type = 'success') =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setNotification({ msg, type });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; setNotification(null), 3000);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const allMedicines = useMemo(() =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return catalogues.flatMap(cat =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>cat.medicines.map(med =&gt; ({</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>...med,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>manufacturer: cat.manufacturer</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>}))</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}, [catalogues]);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const handleFileUpload = async (e) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const file = e.target.files[0];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (!file) return;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>try {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setLoading(true);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>if (!window.XLSX) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>await new Promise((resolve, reject) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>const script = document.createElement('script');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>script.onload = resolve;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>script.onerror = reject;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>document.head.appendChild(script);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>});</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const reader = new FileReader();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>reader.onload = async (evt) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const bstr = evt.target.result;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const wb = window.XLSX.read(bstr, { type: 'binary' });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const wsname = wb.SheetNames[0];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const ws = wb.Sheets[wsname];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const data = window.XLSX.utils.sheet_to_json(ws, { raw: false });</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const fixExcelId = (raw) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>if (raw === undefined || raw === null) return '';</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>const val = String(raw).trim();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>if (/^\d{2}-\d{2}$/.test(val)) return val;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>const num = Number(val);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>if (!isNaN(num) &amp;&amp; val.includes('.') &amp;&amp; num &gt; 10000 &amp;&amp; num &lt; 90000) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const date = new Date(Math.round((num - 25569) * 86400 * 1000));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const mm = String(date.getMonth() + 1).padStart(2, '0');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const dd = String(date.getDate()).padStart(2, '0');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const yyyy = date.getFullYear();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>if (dd === '01' &amp;&amp; yyyy &gt;= 1900 &amp;&amp; yyyy !== new Date().getFullYear()) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>return `${mm}-${String(yyyy).slice(-2)}`;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>return `${mm}-${dd}`;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>const shortDateMatch = val.match(/^(\d{1,2})[\/\-](\d{1,2})$/);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>if (shortDateMatch) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const part1 = shortDateMatch[1].padStart(2, '0');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const part2 = shortDateMatch[2].padStart(2, '0');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>return `${part1}-${part2}`;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>if ((val.includes('/') || val.includes('-') || /[a-zA-Z]/.test(val)) &amp;&amp; val.length &gt; 4) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>const d = new Date(val);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>if (!isNaN(d.getTime())) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>const mm = String(d.getMonth() + 1).padStart(2, '0');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>const dd = String(d.getDate()).padStart(2, '0');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>const yyyy = d.getFullYear();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>if (dd === '01' &amp;&amp; yyyy &gt;= 1900 &amp;&amp; yyyy &lt; 2100 &amp;&amp; yyyy !== new Date().getFullYear()) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>return `${mm}-${String(yyyy).slice(-2)}`;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>return `${mm}-${dd}`;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>return val;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>};</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                        </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>const parsedMeds = data.map((row, index) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>const rawId = row['編號'] || row['藥物編碼'] || row['代碼'] || row['ID'] || row['序號'] || index + 1;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>return {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>uid: `excel_${Date.now()}_${index}`,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>id: fixExcelId(rawId),</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>name: row['藥品名稱'] || row['名稱'] || row['Name'] || '未知藥品',</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>concentration: String(row['參考濃度'] || row['濃度'] || row['Concentration'] || '-'),</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>cost: parseFloat(row['成本']) || parseFloat(row['Cost']) || 0,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>price: parseFloat(row['售價']) || parseFloat(row['Price']) || 0,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>};</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>}).filter(m =&gt; m.name !== '未知藥品');</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>setPendingImport({ medicines: parsedMeds });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>setImportForm({ manufacturer: '', importDate: new Date().toISOString().split('T')[0] });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>setViewCatalogue(null);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>showNotification(`成功解析 ${parsedMeds.length} 筆藥品，請設定藥廠資訊以儲存。`, 'success');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>};</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>reader.readAsBinaryString(file);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} catch (err) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>console.error(err);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('Excel 導入失敗，請確認格式', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} finally {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setLoading(false);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>e.target.value = '';</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const handleConfirmImport = async () =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (!importForm.manufacturer.trim()) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('請輸入藥廠名稱 / 列表名稱', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>return;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const newCatalogue = {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>id: `cat_${Date.now()}`,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>manufacturer: importForm.manufacturer.trim(),</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>importDate: importForm.importDate,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>medicines: pendingImport.medicines</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const updatedCats = [newCatalogue, ...catalogues];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>await api.saveCatalogues(updatedCats);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setCatalogues(updatedCats);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setPendingImport(null);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>showNotification(`已成功儲存「${newCatalogue.manufacturer}」的藥品庫存！`, 'success');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const handleDeleteCatalogue = async (id) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (window.confirm('確定要刪除此藥廠的庫存列表嗎？這將會永久移除該列表內的所有藥品資料。')) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const updated = catalogues.filter(c =&gt; c.id !== id);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>await api.saveCatalogues(updated);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setCatalogues(updated);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('庫存列表已刪除', 'success');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const filteredSearch = useMemo(() =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (!searchQuery) return [];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return allMedicines</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>.filter(m =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>String(m.id).includes(searchQuery) ||</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>m.manufacturer.toLowerCase().includes(searchQuery.toLowerCase())</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>)</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>.slice(0, 10);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}, [searchQuery, allMedicines]);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const addMedicineToPrescription = (med) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (selectedMeds.find(m =&gt; m.uid === med.uid)) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('該項藥品已在處方中', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>return;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setSelectedMeds([...selectedMeds, { ...med, dailyDosage: 1 }]);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setSearchQuery('');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const updateDosage = (uid, newDosage) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setSelectedMeds(selectedMeds.map(m =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>m.uid === uid ? { ...m, dailyDosage: parseFloat(newDosage) || 0 } : m</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const removeMedicine = (uid) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setSelectedMeds(selectedMeds.filter(m =&gt; m.uid !== uid));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const calculations = useMemo(() =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>let totalCost = 0;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>let totalPrice = 0;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>let totalGramsDaily = 0;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>selectedMeds.forEach(med =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const itemTotalGrams = med.dailyDosage * settings.days;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>totalCost += itemTotalGrams * (med.cost / 100);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>totalPrice += itemTotalGrams * (med.price / 100);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>totalGramsDaily += med.dailyDosage;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return { totalCost, totalPrice, totalGramsDaily };</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>}, [selectedMeds, settings.days]);</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const handleSaveAndPrint = async () =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (!patientInfo.name) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('請填寫病患姓名', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>return;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if (selectedMeds.length === 0) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('請至少添加一項藥品', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>return;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>setLoading(true);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>showNotification('正在生成 PDF，請稍候...', 'success');</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>try {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>await api.savePrescription({</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>patientInfo,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>settings,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>medicines: selectedMeds,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>totals: calculations</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>if (!window.html2pdf) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>await new Promise((resolve, reject) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>const script = document.createElement('script');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>script.onload = resolve;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>script.onerror = reject;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>document.head.appendChild(script);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>});</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const element = document.getElementById('pdf-content');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>const opt = {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>margin: 0,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>filename: `處方箋_${patientInfo.name}_${patientInfo.date}.pdf`,</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>image: { type: 'jpeg', quality: 0.98 },</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>html2canvas: { scale: 2, logging: false, useCORS: true, scrollY: 0, scrollX: 0 },</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>await window.html2pdf().set(opt).from(element).save();</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('PDF 已成功生成！', 'success');</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} catch (err) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>console.error(err);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>showNotification('PDF 生成失敗', 'error');</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>} finally {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setLoading(false);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const handleClear = () =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>if(window.confirm('確定要清空當前處方嗎？')) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setSelectedMeds([]);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setPatientInfo({ name: '', gender: '男', age: '', date: new Date().toISOString().split('T')[0], diagnosis: '' });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>setSettings({ days: 7, packetsPerDay: 2, doctorName: '', doctorRegNo: '' });</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>const chunkArray = (arr, size) =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>const result = [];</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; arr.length; i += size) {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>result.push(arr.slice(i, i + size));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>return result;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>return (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="min-h-screen text-slate-800"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;header className="bg-white shadow-sm print-hidden sticky top-0 z-40"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex justify-between items-center py-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="flex items-center space-x-2 text-emerald-700"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;Icon name="Activity" className="h-8 w-8" /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;h1 className="text-2xl font-bold tracking-tight"&gt;中醫智慧開藥系統&lt;/h1&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;nav className="flex space-x-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>onClick={() =&gt; setActiveTab('prescription')}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>className={`px-4 py-2 rounded-md font-medium transition-colors ${activeTab === 'prescription' ? 'bg-emerald-100 text-emerald-800' : 'text-slate-600 hover:bg-slate-100'}`}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex items-center space-x-1"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;Icon name="FileText" className="h-4 w-4" /&gt;&lt;span&gt;處方開立&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>onClick={() =&gt; { setActiveTab('inventory'); setPendingImport(null); setViewCatalogue(null); }}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>className={`px-4 py-2 rounded-md font-medium transition-colors ${activeTab === 'inventory' ? 'bg-emerald-100 text-emerald-800' : 'text-slate-600 hover:bg-slate-100'}`}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex items-center space-x-1"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;Icon name="PackageSearch" className="h-4 w-4" /&gt;&lt;span&gt;藥品庫存管理&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/nav&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/header&gt;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>{notification &amp;&amp; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className={`fixed top-20 right-4 p-4 rounded-md shadow-lg z-50 flex items-center space-x-2 text-white print-hidden ${notification.type === 'error' ? 'bg-red-500' : 'bg-emerald-500'}`}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;Icon name={notification.type === 'error' ? 'AlertCircle' : 'CheckCircle2'} className="h-5 w-5" /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;span&gt;{notification.msg}&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>)}</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 print-hidden"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>{activeTab === 'inventory' &amp;&amp; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="bg-white rounded-xl shadow-sm border border-emerald-100 overflow-hidden"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>{pendingImport ? (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6 border-b border-emerald-100 flex justify-between items-center bg-emerald-50/50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;h2 className="text-xl font-bold text-emerald-800"&gt;步驟 2: 確認並儲存導入資料&lt;/h2&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                           </span>&lt;div className="mb-6 text-sm text-emerald-700 bg-emerald-50 p-4 rounded-md border border-emerald-200 flex items-center"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;Icon name="CheckCircle2" className="h-5 w-5 mr-2" /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;span&gt;成功解析 &lt;strong&gt;{pendingImport.medicines.length}&lt;/strong&gt; 筆藥品資料。請設定資訊後儲存。&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                           </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                           </span>&lt;div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;label className="block text-sm font-bold text-slate-700 mb-2"&gt;藥廠名稱 / 列表名稱 *&lt;/label&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;input type="text" value={importForm.manufacturer} onChange={e =&gt; setImportForm({...importForm, manufacturer: e.target.value})} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500" placeholder="例：農本方、海天..." autoFocus /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;label className="block text-sm font-bold text-slate-700 mb-2"&gt;導入日期&lt;/label&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;input type="date" value={importForm.importDate} onChange={e =&gt; setImportForm({...importForm, importDate: e.target.value})} className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500" /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                           </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                           </span>&lt;div className="flex space-x-4 pb-8 border-b border-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;button onClick={handleConfirmImport} className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center space-x-2"&gt;&lt;Icon name="Save" /&gt;&lt;span&gt;確認並儲存&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                              </span>&lt;button onClick={() =&gt; setPendingImport(null)} className="flex-1 bg-white border border-slate-300 text-slate-700 font-bold py-3 px-4 rounded-lg"&gt;取消導入&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                           </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>) : viewCatalogue ? (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6 border-b border-emerald-100 flex justify-between items-center bg-emerald-50/50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="flex items-center space-x-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;button onClick={() =&gt; setViewCatalogue(null)} className="flex items-center space-x-1 px-3 py-1.5 bg-white border border-slate-300 rounded-md text-sm text-slate-600"&gt;&lt;Icon name="ArrowLeft" /&gt; &lt;span&gt;返回列表&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;h2 className="text-xl font-bold text-emerald-800"&gt;{viewCatalogue.manufacturer}&lt;/h2&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="text-sm font-medium text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200"&gt;共 {viewCatalogue.medicines.length} 筆&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6 overflow-x-auto"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;table className="min-w-full divide-y divide-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;thead className="bg-slate-50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-6 py-3 text-left text-xs font-medium text-slate-500"&gt;編號&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-6 py-3 text-left text-xs font-medium text-slate-500"&gt;名稱&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-6 py-3 text-left text-xs font-medium text-slate-500"&gt;濃度&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-6 py-3 text-right text-xs font-medium text-slate-500"&gt;成本/100g&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-6 py-3 text-right text-xs font-medium text-slate-500"&gt;售價/100g&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/thead&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;tbody className="bg-white divide-y divide-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>{viewCatalogue.medicines.map((med) =&gt; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;tr key={med.uid} className="hover:bg-slate-50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;td className="px-6 py-4 text-sm"&gt;{med.id}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;td className="px-6 py-4 text-sm font-medium"&gt;{med.name}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;td className="px-6 py-4 text-sm text-slate-500"&gt;{med.concentration}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;td className="px-6 py-4 text-sm text-right"&gt;{med.cost.toFixed(2)}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;td className="px-6 py-4 text-sm text-emerald-600 font-medium text-right"&gt;{med.price.toFixed(2)}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>))}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/table&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>) : (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6 border-b border-emerald-100 flex justify-between items-center bg-emerald-50/50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;h2 className="text-xl font-bold text-emerald-800"&gt;各藥廠庫存列表&lt;/h2&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="relative"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;input type="file" accept=".xlsx, .xls, .csv" onChange={handleFileUpload} className="hidden" id="excel-upload" disabled={loading} /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;label htmlFor="excel-upload" className="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg cursor-pointer shadow-sm"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;Icon name="Upload" /&gt;&lt;span&gt;新增導入 Excel&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/label&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="p-6"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="overflow-x-auto rounded-lg border border-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;table className="min-w-full divide-y divide-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;thead className="bg-slate-50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase"&gt;藥廠 / 列表名稱&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;th className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase"&gt;導入日期&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;th className="px-6 py-3 text-center text-xs font-medium text-slate-500 uppercase"&gt;藥品數量&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;th className="px-6 py-3 text-right text-xs font-medium text-slate-500 uppercase"&gt;操作&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/thead&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;tbody className="bg-white divide-y divide-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>{catalogues.length === 0 ? (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;tr&gt;&lt;td colSpan="4" className="px-6 py-10 text-center text-slate-400"&gt;尚無資料，請新增導入。&lt;/td&gt;&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>) : (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>catalogues.map((cat) =&gt; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;tr key={cat.id} className="hover:bg-slate-50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-6 py-4 text-sm font-bold text-emerald-700"&gt;{cat.manufacturer}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-6 py-4 text-sm text-slate-600"&gt;{cat.importDate}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-6 py-4 text-sm text-center"&gt;{cat.medicines.length} 筆&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-6 py-4 text-right text-sm font-medium space-x-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;button onClick={() =&gt; setViewCatalogue(cat)} className="text-blue-600 hover:text-blue-800 inline-flex items-center"&gt;&lt;Icon name="Eye" className="mr-1" /&gt;查看&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                        </span>&lt;button onClick={() =&gt; handleDeleteCatalogue(cat.id)} className="text-red-500 hover:text-red-700 inline-flex items-center"&gt;&lt;Icon name="Trash2" className="mr-1" /&gt;刪除&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>))</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>)}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/table&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>)}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>)}</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>{activeTab === 'prescription' &amp;&amp; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="grid grid-cols-1 lg:grid-cols-3 gap-6"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="lg:col-span-1 space-y-6"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="bg-white p-6 rounded-xl shadow-sm border border-emerald-100"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-lg font-bold text-emerald-800 mb-4 border-b pb-2 border-emerald-100"&gt;病患資訊&lt;/h3&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="space-y-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;label className="block text-sm font-medium text-slate-700 mb-1"&gt;姓名&lt;/label&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;input type="text" value={patientInfo.name} onChange={e =&gt; setPatientInfo({...patientInfo, name: e.target.value})} className="w-full px-3 py-2 border border-slate-300 rounded-md" /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="grid grid-cols-2 gap-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;label className="block text-sm font-medium"&gt;性別&lt;/label&gt;&lt;select value={patientInfo.gender} onChange={e =&gt; setPatientInfo({...patientInfo, gender: e.target.value})} className="w-full px-3 py-2 border rounded-md"&gt;&lt;option&gt;男&lt;/option&gt;&lt;option&gt;女&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;label className="block text-sm font-medium"&gt;年齡&lt;/label&gt;&lt;input type="number" value={patientInfo.age} onChange={e =&gt; setPatientInfo({...patientInfo, age: e.target.value})} className="w-full px-3 py-2 border rounded-md" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;&lt;label className="block text-sm font-medium"&gt;就診日期&lt;/label&gt;&lt;input type="date" value={patientInfo.date} onChange={e =&gt; setPatientInfo({...patientInfo, date: e.target.value})} className="w-full px-3 py-2 border rounded-md" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;&lt;label className="block text-sm font-medium"&gt;診斷&lt;/label&gt;&lt;textarea value={patientInfo.diagnosis} onChange={e =&gt; setPatientInfo({...patientInfo, diagnosis: e.target.value})} className="w-full px-3 py-2 border rounded-md" rows="2"&gt;&lt;/textarea&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="bg-white p-6 rounded-xl shadow-sm border border-emerald-100"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 className="text-lg font-bold text-emerald-800 mb-4 border-b pb-2 flex justify-between items-center"&gt;&lt;span&gt;處方設定與加藥&lt;/span&gt;&lt;Icon name="Settings" className="text-emerald-500"/&gt;&lt;/h3&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="grid grid-cols-2 gap-4 mb-6 bg-slate-50 p-4 rounded-lg"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;&lt;label className="text-xs font-bold"&gt;天數&lt;/label&gt;&lt;input type="number" min="1" value={settings.days} onChange={e =&gt; setSettings({...settings, days: parseInt(e.target.value)||1})} className="w-full px-2 py-1 border rounded text-center font-bold text-emerald-700" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;&lt;label className="text-xs font-bold"&gt;每日包數&lt;/label&gt;&lt;input type="number" min="1" value={settings.packetsPerDay} onChange={e =&gt; setSettings({...settings, packetsPerDay: parseInt(e.target.value)||1})} className="w-full px-2 py-1 border rounded text-center font-bold text-emerald-700" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;&lt;label className="text-xs"&gt;醫師姓名&lt;/label&gt;&lt;input type="text" value={settings.doctorName} onChange={e =&gt; setSettings({...settings, doctorName: e.target.value})} className="w-full px-2 py-1 border rounded" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div&gt;&lt;label className="text-xs"&gt;註冊編號&lt;/label&gt;&lt;input type="text" value={settings.doctorRegNo} onChange={e =&gt; setSettings({...settings, doctorRegNo: e.target.value})} className="w-full px-2 py-1 border rounded" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="relative"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;label className="block text-sm font-medium text-slate-700 mb-1"&gt;搜尋藥品&lt;/label&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="relative"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"&gt;&lt;Icon name="Search" className="text-slate-400" /&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;input type="text" value={searchQuery} onChange={e =&gt; setSearchQuery(e.target.value)} className="w-full pl-10 pr-3 py-3 border border-emerald-300 rounded-md focus:ring-2 focus:ring-emerald-500" placeholder="搜尋名稱、代碼時或藥廠..." /&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>{searchQuery &amp;&amp; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div className="absolute z-50 mt-1 w-full bg-white rounded-md shadow-xl border border-slate-200 max-h-60 overflow-y-auto"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>{filteredSearch.length &gt; 0 ? (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>filteredSearch.map(med =&gt; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;div key={med.uid} onClick={() =&gt; addMedicineToPrescription(med)} className="px-4 py-3 hover:bg-emerald-50 cursor-pointer flex justify-between items-center border-b last:border-0"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;div className="font-bold text-slate-800"&gt;{med.name}&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;div className="text-xs text-slate-500"&gt;{med.manufacturer} | {med.id}&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;div className="text-right"&gt;&lt;div className="text-sm text-emerald-600"&gt;${med.price}/100g&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>))</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>) : (&lt;div className="px-4 py-3 text-sm text-slate-500"&gt;找不到相符藥品&lt;/div&gt;)}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>)}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="lg:col-span-2 flex flex-col space-y-6"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="bg-white flex-1 p-6 rounded-xl shadow-sm border border-emerald-100 flex flex-col min-h-[500px]"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex justify-between items-center mb-4 border-b pb-2"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;h3 className="text-xl font-bold text-emerald-800"&gt;處方明細&lt;/h3&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="text-sm bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full"&gt;{settings.days} 天 / 每日 {settings.packetsPerDay} 包&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="flex-1 overflow-y-auto mb-6 bg-slate-50/50 rounded-lg"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;table className="min-w-full divide-y divide-slate-200"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;thead className="bg-slate-100 sticky top-0"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-4 py-3 text-left text-xs font-bold text-slate-600"&gt;藥品名稱 (藥廠)&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-4 py-3 text-center text-xs font-bold text-slate-600"&gt;每日劑量 (g)&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-4 py-3 text-right text-xs font-bold text-slate-600"&gt;總量 (g)&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-4 py-3 text-right text-xs font-bold text-slate-600"&gt;小計售價&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;th className="px-4 py-3 text-center text-xs font-bold text-slate-600"&gt;操作&lt;/th&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/thead&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;tbody className="bg-white divide-y divide-slate-100"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>{selectedMeds.length === 0 ? (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;tr&gt;&lt;td colSpan="5" className="px-4 py-12 text-center text-slate-400"&gt;請由左側搜尋並加入藥品。&lt;/td&gt;&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>) : (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>selectedMeds.map(med =&gt; {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>const totalGrams = med.dailyDosage * settings.days;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>const itemPrice = totalGrams * (med.price / 100);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>return (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;tr key={med.uid} className="hover:bg-emerald-50/50"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-4 py-3 text-sm font-bold"&gt;&lt;div&gt;{med.name}&lt;/div&gt;&lt;div className="text-xs text-slate-500 font-normal"&gt;{med.manufacturer}&lt;/div&gt;&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-4 py-3"&gt;&lt;input type="number" min="0" step="0.5" value={med.dailyDosage} onChange={(e) =&gt; updateDosage(med.uid, e.target.value)} className="w-20 px-2 py-1 border rounded text-center mx-auto block" /&gt;&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-4 py-3 text-sm text-right"&gt;{totalGrams.toFixed(1)} g&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-4 py-3 text-sm font-medium text-emerald-600 text-right"&gt;$ {itemPrice.toFixed(0)}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                    </span>&lt;td className="px-4 py-3 text-center"&gt;&lt;button onClick={() =&gt; removeMedicine(med.uid)} className="text-red-400 hover:text-red-600"&gt;&lt;Icon name="Trash2" /&gt;&lt;/button&gt;&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                                </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>})</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>)}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/table&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div className="bg-slate-800 text-white rounded-xl p-6 shadow-md"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;div className="text-slate-400 text-xs"&gt;每日總劑量&lt;/div&gt;&lt;div className="text-lg font-bold"&gt;{calculations.totalGramsDaily.toFixed(1)} g&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;div className="text-slate-400 text-xs"&gt;總天數&lt;/div&gt;&lt;div className="text-lg font-bold"&gt;{settings.days} 天&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;div className="text-slate-400 text-xs"&gt;估算成本&lt;/div&gt;&lt;div className="text-lg font-bold text-slate-300"&gt;$ {calculations.totalCost.toFixed(0)}&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;div&gt;&lt;div className="text-emerald-400 text-xs"&gt;總售價&lt;/div&gt;&lt;div className="text-2xl font-extrabold text-emerald-400"&gt;$ {calculations.totalPrice.toFixed(0)}&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="flex space-x-4"&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;button onClick={handleClear} className="flex-1 py-3 border border-slate-600 rounded-lg hover:bg-slate-700 flex items-center justify-center space-x-2"&gt;&lt;Icon name="Trash2" /&gt; &lt;span&gt;清空&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;button onClick={handleSaveAndPrint} className="flex-[2] py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-400 font-bold text-lg flex items-center justify-center space-x-2"&gt;&lt;Icon name="Printer" /&gt; &lt;span&gt;儲存並列印 (PDF)&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>)}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/main&gt;</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>{/* PDF 生成隱藏內容 */}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="pdf-content" style={{ width: '210mm', padding: '20mm', backgroundColor: '#fff', color: '#000' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div style={{ textAlign: 'center', marginBottom: '30px' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h1 style={{ fontSize: '28px', fontWeight: 'bold' }}&gt;中醫處方&lt;/h1&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;table style={{ width: '100%', marginBottom: '30px', borderCollapse: 'collapse' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;td style={{ padding: '8px 0', width: '33%' }}&gt;&lt;strong&gt;姓名：&lt;/strong&gt;{patientInfo.name}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;td style={{ padding: '8px 0', width: '33%' }}&gt;&lt;strong&gt;性別：&lt;/strong&gt;{patientInfo.gender}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;td style={{ padding: '8px 0', width: '34%' }}&gt;&lt;strong&gt;日期：&lt;/strong&gt;{patientInfo.date}&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;tr&gt;&lt;td style={{ padding: '15px 0' }} colSpan="3"&gt;&lt;strong&gt;診斷：&lt;/strong&gt;{patientInfo.diagnosis}&lt;/td&gt;&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/table&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div style={{ minHeight: '300px' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h2 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '15px' }}&gt;處方：&lt;/h2&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;table style={{ width: '100%', borderCollapse: 'collapse' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>{chunkArray(selectedMeds, 2).map((row, idx) =&gt; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;tr key={idx}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>{row.map((med, midx) =&gt; (</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;td key={midx} style={{ padding: '10px', borderBottom: '1px dashed #ccc', width: '50%' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;div style={{ display: 'flex', justifyContent: 'space-between' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;span&gt;&lt;strong&gt;{med.name}&lt;/strong&gt; &lt;small&gt;({med.manufacturer})&lt;/small&gt;&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                            </span>&lt;span&gt;{med.dailyDosage} g&lt;/span&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                    </span>&lt;/td&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>))}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                                </span>{row.length === 1 &amp;&amp; &lt;td style={{ borderBottom: '1px dashed #ccc' }}&gt;&lt;/td&gt;}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;/tr&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                        </span>))}</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/tbody&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/table&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div style={{ marginTop: '30px', lineHeight: '1.8' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p&gt;&lt;strong&gt;服法：&lt;/strong&gt;沖服 {settings.days} 天，每天 {settings.packetsPerDay} 次，合共 {settings.days * settings.packetsPerDay} 包，飯後服。&lt;/p&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p&gt;&lt;strong&gt;醫囑：&lt;/strong&gt;與西藥相隔2小時。忌煎炸油辣。&lt;/p&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div style={{ marginTop: '60px', textAlign: 'right' }}&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p&gt;&lt;strong&gt;處方醫師：&lt;/strong&gt;{settings.doctorName}&lt;/p&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p&gt;&lt;strong&gt;註冊編號：&lt;/strong&gt;{settings.doctorRegNo}&lt;/p&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p7"><span class="s11"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>const root = ReactDOM.createRoot(document.getElementById('root'));</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span>root.render(&lt;App /&gt;);</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+<p class="p1"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
+<p class="p1"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+</body>
+</html>
